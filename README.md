@@ -1,0 +1,31 @@
+# Poooding react boiler plate SPEC
+<br><br>
+# Basically, it include as follows...
+
+1. React-Router
+2. Redux
+3. Immutable JS
+4. Redux-Thunk
+5. React-Dom
+6. React-Router-Dom
+7. prop-types
+8. Validator
+9. axios
+
+# And this project has directories structure as follows...
+# It follows DUCKS structure...
+
+src -
+    - API : Functions to call server features
+    - Pages
+    - Containers
+    - Compontents
+    - Modules : Composed Reducers and Actions
+    - Utils : Multiple functions to use in logic
+    - Router
+
+# Also, this project has basic logic as follows
+
+1. Login & Logout
+2. Navigtion after and before login
+3. simple data list up such as blog
