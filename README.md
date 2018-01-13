@@ -1,6 +1,6 @@
 # Poooding react boiler plate SPEC
 <br><br>
-# Basically, it include as follows...
+# Basically, it includes as follows...
 
 1. React-Router
 2. Redux
@@ -11,19 +11,27 @@
 7. prop-types
 8. Validator
 9. axios
+10. sass
+<pre><code>
+	example : 
+import styles from './NavigationBar.scss';
+import classNames from 'classnames/bind';
+const cx = classNames.bind(styles);
+</code></pre>
+  
 
 # And this project has directory structure as follows...
 # It follows DUCKS structure and HOC concept...
 
 @ src 
 <br>
-    - API : Functions to call server features<br>
-    - Pages<br>
-    - Containers<br>
-    - Compontents<br>
-    - Modules : Composed Reducers and Actions<br>
-    - Utils : Multiple functions to use in logic<br>
-    - Router<br>
+    > API : Functions to call server features<br>
+    > Pages<br>
+    > Containers<br>
+    > Compontents<br>
+    > Modules : Composed Reducers and Actions<br>
+    > Utils : Multiple functions to use in logic<br>
+    > Router<br>
 
 # Also, this project has basic logic as follows
 
