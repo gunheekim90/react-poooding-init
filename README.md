@@ -12,17 +12,17 @@
 8. Validator
 9. axios
 
-# And this project has directories structure as follows...
+# And this project has directory structure as follows...
 # It follows DUCKS structure...
 
-src -
-    - API : Functions to call server features
-    - Pages
-    - Containers
-    - Compontents
-    - Modules : Composed Reducers and Actions
-    - Utils : Multiple functions to use in logic
-    - Router
+src -<br>
+    - API : Functions to call server features<br>
+    - Pages<br>
+    - Containers<br>
+    - Compontents<br>
+    - Modules : Composed Reducers and Actions<br>
+    - Utils : Multiple functions to use in logic<br>
+    - Router<br>
 
 # Also, this project has basic logic as follows
 
