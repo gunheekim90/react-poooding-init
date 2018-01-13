@@ -15,7 +15,8 @@
 # And this project has directory structure as follows...
 # It follows DUCKS structure...
 
-src -<br>
+<span style="font-size: 130%; font-weight: 700; color : darkblue">src</span> 
+<br>
     - API : Functions to call server features<br>
     - Pages<br>
     - Containers<br>
