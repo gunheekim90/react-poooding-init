@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink  } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import { connect } from 'react-redux';
 
 import styles from './NavigationBar.scss';
 import classNames from 'classnames/bind';
@@ -9,8 +9,26 @@ const cx = classNames.bind(styles);
 
 
 class NavigationBar extends React.Component {
+  
 
   render() {
+
+    const { isAuthenticated, user } = this.props;
+    console.log(this.props.isAuthenticated)
+    console.log(this.props.user)
+
+    const userLinks = (
+      <ul className="nav navbar-nav navbar-right">
+        <li><a href="#">Logout</a></li>
+      </ul>
+    );
+
+    const guestLinks = (
+      <ul className="nav navbar-nav navbar-right">
+        <li><Link to="/signup">Sign up</Link></li>
+        <li><Link to="/login">Login</Link></li>
+      </ul>
+    );
 
     return (
       <nav className={cx("navbar", "navbar-inverse", "BorderStyle")}>
@@ -49,12 +67,7 @@ class NavigationBar extends React.Component {
               <button type="submit" className="btn btn-default">Submit</button>
             </form>
             <div className="container-fluid">
-              <ul className="nav navbar-nav navbar-right">
-                <ul className="nav navbar-nav navbar-right">
-                  <li><Link to="/register">Sign up</Link></li>
-                  <li><Link to="/login">Login</Link></li>
-                </ul>
-              </ul>
+               { isAuthenticated ? userLinks : guestLinks }
             </div>
             
            
@@ -65,4 +78,16 @@ class NavigationBar extends React.Component {
   }
 }
 
-export default NavigationBar;
+NavigationBar.PropTypes = {
+  auth : PropTypes.object.isRequired
+}
+
+// export default NavigationBar;
+function mapStateToProps(state) {
+  return {
+    isAuthenticated : state.Auth.get('isAuthenticated'),
+    user : state.Auth.get('user')
+  };
+}
+
+export default connect(mapStateToProps,null)(NavigationBar);

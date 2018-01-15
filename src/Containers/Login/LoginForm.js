@@ -5,7 +5,8 @@ import { login } from '../../API/Auth';
 import PropTypes from 'prop-types';
 import { Map } from 'immutable';
 import validateInput from '../../Utils/loginValidation'
-
+import { Route, Redirect } from 'react-router'
+import isEmpty from 'lodash/isEmpty';
 
 class LoginForm extends React.Component {
 
@@ -15,7 +16,8 @@ class LoginForm extends React.Component {
 	      email: '',
 	      password: '',
 	      errors: {},
-	      isLoading: false
+		  isLoading: false,
+		  redirect : false
 	    };
 
 	    this.onSubmit = this.onSubmit.bind(this);
@@ -42,16 +44,29 @@ class LoginForm extends React.Component {
 				.then((res) => {
 					console.log('loginForm res')
 					console.log(res);
-				    this.context.router.push('/')})
-				.catch((err)=>{
-					console.log("에러지역")
-				    this.setState({
-				       errors: {
-				    	email : "There is no such auth"
-				       },
-				       isLoading : false
-				    })
-			})
+					if(!isEmpty(res)){
+						this.setState({redirect : true});
+					}else{
+						this.setState({
+							errors: {
+							 email : "Internal Server Error"
+							},
+							isLoading : false,
+							redirect : false
+						 })
+					}
+					
+					
+				}).catch((err)=>{
+					this.setState({
+						errors: {
+						 email : "There is no such auth"
+						},
+						isLoading : false,
+						redirect : false
+					 })
+				})
+				
 		}
 	}
 
@@ -60,7 +75,11 @@ class LoginForm extends React.Component {
 	}
 
 	render(){
-		const { errors, email, password, isLoading } = this.state;
+		const { errors, email, password, isLoading, redirect } = this.state;
+
+		if (redirect) {
+			return <Redirect to='/'/>;
+		  }
 
 		return (
 

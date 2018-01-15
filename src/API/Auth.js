@@ -1,6 +1,6 @@
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
-import { SET_CURRENT_USER } from '../Modules/Auth';
+import { setCurrentUser } from '../Modules/Auth';
 import { API_HOST } from './config';
 import setAuthorizationToken from '../Utils/setAuthorizationToken'
 
@@ -12,8 +12,10 @@ export function login(data){
 		// localStorage.setItem('jwtToken',token);
 		// setAuthorizationToken(token);
 		// dispatch(SET_CURRENT_USER(jwtDecode));
-		console.log(res);
-		dispatch(SET_CURRENT_USER(res.body.user));
+		console.log("In Auth API")
+		console.log(res.data.user);
+		dispatch(setCurrentUser(res.data.user));
+		return res.data.user
 	})
   }
 	
@@ -23,7 +25,7 @@ export function logout(data){
 	return dispatch =>{
 		// localStorage.removeItem('jwtToken');
 		setAuthorizationToken(false);
-		dispatch(SET_CURRENT_USER({}));
+		dispatch(setCurrentUser({}));
 	}
 	
 }

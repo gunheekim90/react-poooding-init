@@ -11,7 +11,7 @@ class RootRoute extends Component {
 			<div>
 				<Route exact path="/" component={MainPage}/>
 				<Route exact path="/login" component={LoginPage}/>
-				<Route exact path="/register" component={RegisterPage}/>
+				<Route exact path="/signup" component={RegisterPage}/>
 			</div>
 		);
 	}
