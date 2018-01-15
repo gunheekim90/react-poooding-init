@@ -7,14 +7,7 @@ import setAuthorizationToken from '../Utils/setAuthorizationToken'
 
 export function login(data){
   return dispatch =>{
-  	return axios.post(API_HOST+'/client/login',
-  					  data,
-  					  {
-  					  	headers: {
-            			  'Content-Type': 'application/x-www-form-urlencoded',
-        			    },
-        			    withCredentials: true
-        			  }).then(res => {
+  	return axios.post(API_HOST+'/client/login',data).then(res => {
 		// const token = res.data.token;
 		// localStorage.setItem('jwtToken',token);
 		// setAuthorizationToken(token);
