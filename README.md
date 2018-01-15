@@ -13,7 +13,7 @@
 9. axios
 10. sass
 <pre><code>
-	example : 
+How to use : 
 import styles from './NavigationBar.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
@@ -22,7 +22,7 @@ const cx = classNames.bind(styles);
 
 # And this project has directory structure as follows...
 # It follows DUCKS structure and HOC concept...
-
+<pre><code>
 @ src 
 <br>
     > API : Functions to call server features<br>
@@ -32,9 +32,15 @@ const cx = classNames.bind(styles);
     > Modules : Composed Reducers and Actions<br>
     > Utils : Multiple functions to use in logic<br>
     > Router<br>
+<pre><code>
 
 # Also, this project has basic logic as follows
 
 1. Login & Logout
 2. Navigtion after and before login
 3. simple data list up such as blog
+
+
+#Notice
+
+1. I only use Immutable.js on global state 

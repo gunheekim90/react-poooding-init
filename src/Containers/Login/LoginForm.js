@@ -8,6 +8,7 @@ import validateInput from '../../Utils/loginValidation'
 
 
 class LoginForm extends React.Component {
+
 	constructor(props) {
 	    super(props);
 	    this.state = {
@@ -31,12 +32,13 @@ class LoginForm extends React.Component {
 	    return isValid;
 	}
 
-	onSubmit(e){
+	async onSubmit(e){
 		e.preventDefault();
 		if(this.isValid()){
-			this.setState({errors : {}, isLoading : true});
+
+			await this.setState({errors : {}, isLoading : true});
 			console.log(this.state)
-			this.props.login(this.state)
+			await this.props.login(this.state)
 				.then((res) => {
 					console.log('loginForm res')
 					console.log(res);
