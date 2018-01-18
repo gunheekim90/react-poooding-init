@@ -36,11 +36,9 @@ const cx = classNames.bind(styles);
 
 # Also, this project has basic logic as follows
 
-1. Login & Logout
-2. Navigtion after and before login
-3. simple data list up such as blog
+1. If you want to send validated data t server, Should be logined and store token in header
 
 
 #Notice
 
-1. I only use Immutable.js on global state 
+1. Only use Immutable.js on global state 
