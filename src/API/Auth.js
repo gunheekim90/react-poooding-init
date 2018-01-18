@@ -14,6 +14,7 @@ export function login(data){
 		// dispatch(SET_CURRENT_USER(jwtDecode));
 		console.log("In Auth API")
 		console.log(res.data.user);
+		localStorage.setItem("user",res.data.user)
 		dispatch(setCurrentUser(res.data.user));
 		return res.data.user
 	})
@@ -24,8 +25,10 @@ export function login(data){
 export function logout(data){
 	return dispatch =>{
 		// localStorage.removeItem('jwtToken');
-		setAuthorizationToken(false);
+		// setAuthorizationToken(false);
+		localStorage.removeItem('user');
 		dispatch(setCurrentUser({}));
+		return {success : 200};
 	}
 	
 }

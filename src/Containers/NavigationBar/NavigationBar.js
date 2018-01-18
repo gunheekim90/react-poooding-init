@@ -1,25 +1,59 @@
 import React from 'react';
+import { Redirect } from 'react-router';
 import { Link, NavLink  } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
+import { logout } from '../../API/Auth';
 import styles from './NavigationBar.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
 
+
 class NavigationBar extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      redirect : false
+    }
+
+  }
+
+  logoutHandle(e){
+    e.preventDefault();
+    console.log("로그아웃 실행");
+    this.props.logout().then((res)=>{
+      if(res.success == 200){
+        alert("로그아웃 완료");
+        this.setState({
+          redirect : true
+        })  
+      }else{
+        alert("로그아웃 실패")
+      }
+      
+    }).catch((err)=>{
+      console.log(err);
+      alert("로그아웃 실패")
+    });
+  }
   
 
   render() {
 
     const { isAuthenticated, user } = this.props;
+    const { redirect } = this.state;
     console.log(this.props.isAuthenticated)
     console.log(this.props.user)
 
+    if(redirect){
+      <Redirect to="/"/>
+    }
+
     const userLinks = (
       <ul className="nav navbar-nav navbar-right">
-        <li><a href="#">Logout</a></li>
+        <li><a href="#" onclick="this.logoutHandle.bind(this)">Logout</a></li>
       </ul>
     );
 
@@ -90,4 +124,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps,null)(NavigationBar);
+export default connect(mapStateToProps,{ logout })(NavigationBar);
