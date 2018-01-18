@@ -4,7 +4,14 @@ import isEmpty from 'lodash/isEmpty';
 
 export const SET_CURRENT_USER = 'Auth/SET_CURRENT_USER';
 
-export const setCurrentUser = createAction(SET_CURRENT_USER)
+export const setCurrentUser = createAction(SET_CURRENT_USER);
+// export function setCurrentUser(user){
+// 	return {
+// 		type : SET_CURRENT_USER,
+// 		user : user
+// 	}
+// }
+
 
 const initialState = Map({
 	isAuthenticated : false,
@@ -13,12 +20,6 @@ const initialState = Map({
 	})
 })
 
-// export function setCurrentUser(user){
-// 	return {
-// 		type : SET_CURRENT_USER,
-// 		user : user
-// 	}
-// }
 
 export default handleActions({
 	

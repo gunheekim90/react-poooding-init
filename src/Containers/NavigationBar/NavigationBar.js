@@ -20,23 +20,14 @@ class NavigationBar extends React.Component {
 
   }
 
-  logoutHandle(e){
+  async logoutHandle(e){
     e.preventDefault();
     console.log("로그아웃 실행");
-    this.props.logout().then((res)=>{
-      if(res.success == 200){
-        alert("로그아웃 완료");
-        this.setState({
+    await this.props.logout();
+    console.log("로그아웃 완료")
+    await this.setState({
           redirect : true
-        })  
-      }else{
-        alert("로그아웃 실패")
-      }
-      
-    }).catch((err)=>{
-      console.log(err);
-      alert("로그아웃 실패")
-    });
+    })  
   }
   
 
@@ -44,8 +35,8 @@ class NavigationBar extends React.Component {
 
     const { isAuthenticated, user } = this.props;
     const { redirect } = this.state;
-    console.log(this.props.isAuthenticated)
-    console.log(this.props.user)
+    // console.log(this.props.isAuthenticated)
+    // console.log(this.props.user)
 
     if(redirect){
       <Redirect to="/"/>
@@ -53,7 +44,8 @@ class NavigationBar extends React.Component {
 
     const userLinks = (
       <ul className="nav navbar-nav navbar-right">
-        <li><a href="#" onclick="this.logoutHandle.bind(this)">Logout</a></li>
+        <li><Link to="/mypage">{user.name}</Link></li>
+        <li><a href="#" onClick={this.logoutHandle.bind(this)}>Logout</a></li>
       </ul>
     );
 
@@ -113,7 +105,8 @@ class NavigationBar extends React.Component {
 }
 
 NavigationBar.PropTypes = {
-  auth : PropTypes.object.isRequired
+  auth : PropTypes.object.isRequired,
+  logout : PropTypes.func.isRequired
 }
 
 // export default NavigationBar;

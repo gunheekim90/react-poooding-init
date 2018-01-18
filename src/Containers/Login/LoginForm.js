@@ -39,28 +39,47 @@ class LoginForm extends React.Component {
 		if(this.isValid()){
 
 			await this.setState({errors : {}, isLoading : true});
-			console.log(this.state)
-			await this.props.login(this.state)
-				.then((res) => {
-					console.log('loginForm res')
-					console.log(res);
-					if(!isEmpty(res)){
-						this.setState({redirect : true});
-					}else{
+			// console.log(this.state)
+			await this.props.login(this.state).then((res) => {
+
+					console.log('[LoginForm res]')
+					// console.log(res);
+					if(res === 'axiosError'){
 						this.setState({
 							errors: {
-							 email : "Internal Server Error"
+								email : "External Server Error(axios error)"
 							},
-							isLoading : false,
-							redirect : false
-						 })
+								isLoading : false,
+								redirect : false
+						})
+					}else if(res === 'authAccountError'){
+						this.setState({
+							errors: {
+								email : "이메일을 다시 확인해주세요",
+								password : "비밀번호를 다시 확인해주세요"
+							},
+								isLoading : false,
+								redirect : false
+						})
+					}else if(res === 'jwtError'){
+						this.setState({
+							errors: {
+								email : "External Server Error(jwtError)"
+							},
+								isLoading : false,
+								redirect : false
+						})
+					}else{
+						console.log("성공")
+						this.setState({redirect : true});
 					}
-					
-					
+
 				}).catch((err)=>{
+					console.log(err)
+					alert("네트워크 불안정으로 잠시 뒤, 다시 시도 해주시기 바랍니다.")
 					this.setState({
 						errors: {
-						 email : "There is no such auth"
+						 email : "Internal server error 재접속 요망"
 						},
 						isLoading : false,
 						redirect : false
@@ -90,6 +109,7 @@ class LoginForm extends React.Component {
 					field='email'
 					label='User Email'
 					value={email}
+					type='email'
 					error={errors.email}
 					onChange={this.onChange}
 				/>
@@ -97,6 +117,7 @@ class LoginForm extends React.Component {
 				<TextFieldGroup
 					field='password'
 					label='Password'
+					type='password'
 					value={password}
 					error={errors.password}
 					onChange={this.onChange}

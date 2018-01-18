@@ -3,8 +3,8 @@ import isEmpty from 'lodash/isEmpty';
 
 export default function validateInput(data) {
   let errors = {};
-  console.log("[In Login Validation]");
-  console.log(data)
+  // console.log("[In Login Validation]");
+  // console.log(data)
   if (data.email == '') {
     errors.email = 'This field is required';
   }
