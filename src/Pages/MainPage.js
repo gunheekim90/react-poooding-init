@@ -3,6 +3,7 @@ import NavigationBar from '../Containers/NavigationBar/NavigationBar'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { test } from '../API/data';
+import ModalButton from '../Components/ModalButton'
 
 
 class MainPage extends Component {
@@ -29,10 +30,7 @@ class MainPage extends Component {
 			<div>
 				<NavigationBar/>
 				MainPage
-				<button
-				  onClick={this.testHandle.bind(this)}>
-					test
-				  </button>
+				<ModalButton/>
 			</div>
 		)
 	}
@@ -41,4 +39,5 @@ class MainPage extends Component {
 MainPage.PropTypes = {
 	test : PropTypes.func.isRequired
 }
+
 export default connect(null,{ test })(MainPage);

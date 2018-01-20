@@ -815,7 +815,7 @@ babel-plugin-transform-regenerator@6.26.0, babel-plugin-transform-regenerator@^6
   dependencies:
     regenerator-transform "^0.10.0"
 
-babel-plugin-transform-runtime@6.23.0:
+babel-plugin-transform-runtime@6.23.0, babel-plugin-transform-runtime@^6.23.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.23.0.tgz#88490d446502ea9b8e7efb0fe09ec4d99479b1ee"
   dependencies:
@@ -892,7 +892,7 @@ babel-preset-react-app@^3.1.0:
     babel-preset-env "1.6.1"
     babel-preset-react "6.24.1"
 
-babel-preset-react@6.24.1:
+babel-preset-react@6.24.1, babel-preset-react@^6.16.0:
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-preset-react/-/babel-preset-react-6.24.1.tgz#ba69dfaea45fc3ec639b6a4ecea6e17702c91380"
   dependencies:
@@ -915,7 +915,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@6.26.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
+babel-runtime@6.26.0, babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -2405,6 +2405,10 @@ execa@^0.7.0:
     p-finally "^1.0.0"
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
+
+exenv@^1.2.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
 
 expand-brackets@^0.1.4:
   version "0.1.5"
@@ -4082,6 +4086,10 @@ load-json-file@^2.0.0:
     pify "^2.0.0"
     strip-bom "^3.0.0"
 
+load-script@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/load-script/-/load-script-1.0.0.tgz#0491939e0bee5643ee494a7e3da3d2bac70c6ca4"
+
 loader-fs-cache@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/loader-fs-cache/-/loader-fs-cache-1.0.1.tgz#56e0bf08bd9708b26a765b68509840c8dec9fdbc"
@@ -5424,6 +5432,15 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-ckeditor-component@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/react-ckeditor-component/-/react-ckeditor-component-1.0.7.tgz#d5a546b8311844bf55993c27592304f1da79bcae"
+  dependencies:
+    babel-plugin-transform-runtime "^6.23.0"
+    babel-preset-react "^6.16.0"
+    babel-runtime "^6.11.6"
+    load-script "^1.0.0"
+
 react-dev-utils@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-4.2.1.tgz#9f2763e7bafa1a1b9c52254d2a479deec280f111"
@@ -5459,6 +5476,14 @@ react-dom@^16.2.0:
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
+
+react-modal@^3.1.11:
+  version "3.1.11"
+  resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.1.11.tgz#95c8223fcee7013258ad2d149c38c9f870c89958"
+  dependencies:
+    exenv "^1.2.0"
+    prop-types "^15.5.10"
+    warning "^3.0.0"
 
 react-redux@^5.0.6:
   version "5.0.6"
