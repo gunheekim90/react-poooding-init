@@ -45,58 +45,48 @@ class NavigationBar extends React.Component {
     const userLinks = (
       <ul className="nav navbar-nav navbar-right">
         <li><Link to="/mypage">{user.name}</Link></li>
-        <li><a href="#" onClick={this.logoutHandle.bind(this)}>Logout</a></li>
+        <li><a href="#" onClick={this.logoutHandle.bind(this)} style={{color : '#fff'}}>Logout</a></li>
       </ul>
     );
 
     const guestLinks = (
       <ul className="nav navbar-nav navbar-right">
-        <li><Link to="/signup">Sign up</Link></li>
-        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/signup" style={{color : '#fff'}}>Sign up</Link></li>
+        <li><Link to="/login" style={{color : '#fff'}}>Login</Link></li>
       </ul>
     );
 
     return (
       <nav className={cx("navbar", "navbar-inverse", "BorderStyle")}>
         
-        <div className="container-fluid">
+        <div className="container-fluid" style={{backgroundColor : '#0881A3',color : '#fff'}}>
          {/* <!-- Brand and toggle get grouped for better mobile display -->*/}
-          <div className="navbar-header">
-            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <div className="navbar-header" style={{backgroundColor : '#0881A3'}}>
+            <button type="button" className="navbar-toggle collapsed" style={{backgroundColor : '#0881A3'}} data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
               <span className="sr-only">Toggle navigation</span>
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-             <NavLink exact to="/" className="navbar-brand">로고</NavLink>
+             <NavLink exact to="/" className="navbar-brand" style={{color : '#fff'}}>Poooding</NavLink>
           </div>
 
           {/*<!-- Collect the nav links, forms, and other content for toggling -->*/}
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style={{backgroundColor : '#0881A3'}}>
             <ul className="nav navbar-nav">
-              {/*<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>*/}
-              <li><a href="#">Link</a></li>
-              <li className="dropdown">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
-                <ul className="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                
-                </ul>
-              </li>
+
+              <li><a href="/code" style={{color : '#fff'}}>CODEs</a></li>
+              <li><a href="/snippet" style={{color : '#fff'}}>SNIPPETs</a></li>
             </ul>
             <form className="navbar-form navbar-left">
               <div className="form-group">
                 <input type="text" className="form-control" placeholder="Search"/>
               </div>
-              <button type="submit" className="btn btn-default">Submit</button>
+              <button type="submit" className="btn btn-default">Search</button>
             </form>
             <div className="container-fluid">
                { isAuthenticated ? userLinks : guestLinks }
             </div>
-            
-           
           </div>
         </div>
       </nav>

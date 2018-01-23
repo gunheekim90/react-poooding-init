@@ -30,8 +30,7 @@ class RegisterPage extends Component {
 				<NavigationBar/>
 				<div class="container" style={customStyle.container}>
 					<p style={customStyle.MainAlarm}>
-					  Not supported, yet!<br/>
-					  Will support, Maybe
+					  Code!
 					</p>
 				</div>
 			</div>

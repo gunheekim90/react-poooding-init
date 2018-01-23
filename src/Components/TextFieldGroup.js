@@ -6,9 +6,10 @@ const TextFieldGroup = ({ field, value, label, error, type, onChange, checkUserE
 
   return (
 
-      <div className={classnames('form-group', { 'has-error': error })}>
+      <div className={classnames('form-group', { 'has-error': error })} style={{color : '#fff',fontWeight : '100'}}>
         <label className="control-label">{label}</label>
         <input
+          
           onChange={onChange}
           onBlur={checkUserExists}
           value={value}

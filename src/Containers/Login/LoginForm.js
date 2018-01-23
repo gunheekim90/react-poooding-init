@@ -103,7 +103,7 @@ class LoginForm extends React.Component {
 		return (
 
 			<form onSubmit={this.onSubmit}>
-				<h1>Login</h1>
+				<h1 style={{color : '#fff'}}>Login</h1>
 
 				<TextFieldGroup
 					field='email'
@@ -123,7 +123,9 @@ class LoginForm extends React.Component {
 					onChange={this.onChange}
 				/>
 
-				<div className="form-group"><button className="btn btn-primary btn-lg" disabled={isLoading}>Login</button></div>
+				<div className="form-group">
+					<button className="btn btn-success btn-lg" disabled={isLoading} style={{borderRadius : '0px',border : 'none'}}>Login</button>
+				</div>
 			</form>
 		);
 	}

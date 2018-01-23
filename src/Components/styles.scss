@@ -6,60 +6,90 @@
     bottom: 10px;
     text-align: center;
     border-radius: 100px;
-    background-color: darkgreen;
+    background-color: #FFD6A4;
     border : none;
     outline: 0;
     
     &:hover{
         background-color: #fff;
-        border: 2px solid darkgreen;
+        border: 2px solid #FDE9DF;
     }
 
     p {
         font-weight: 600;
         font-size: 120%;
-        color : #fff;
+        color : #000;
 
         &:hover{
-            color : darkgreen;
+            color : #000;
         }
     }
 }
 
-.closeModalButtonWrraper{
-    text-align: center;
-    position: inline;
-    margin-top: 10px;
+.ModalWrapper{
+    color : #fff;
+    background-color: #282D4F;
+    border : none;
+    padding: 10px;
+
 }
 
-.closeModalStyle {
-    position : 'inline-box';
-    width : 50%;
-    bottom : 10px;
-    background-color : darkgreen;
-    color : #fff;
-    border : none;
-    height : 30px;
-
-    &:hover {
-        background-color: #fff;
-        color : darkgreen;
-        border: 2px solid darkgreen
+.ModalParent{
+    @media screen and (min-width: 768px) {
+        width: 60%;
+    }
+    @media screen and (max-width: 767px) {
+        
     }
 }
 
-.PushStyle {
-    position : 'inline-box';
-    width : 50%;
-    bottom : 10px;
-    background-color : darkblue;
+.modalPushButton{
+    background-color: #FF6C00;
     color : #fff;
-    border : none;
-    height : 30px;
+
+    @media screen and (min-width: 768px) {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        border : none;
+        border-radius: 100%;
+
+
+    }
+    @media screen and (max-width: 767px) {
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        border : none;
+    }
+}
+.modalCloseButton {
+    background-color: #A0204C;
+    color : #fff;
     
-    &:hover {
-        background-color: #fff;
-        color : darkblue;
-        border: 2px solid darkblue
+    @media screen and (min-width: 768px) {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        border : none;
+        border-radius: 100%;
+
+
+    }
+    @media screen and (max-width: 767px) {
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        border : none;
     }
 }
+
+.displayButton {
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
