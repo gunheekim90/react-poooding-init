@@ -15,6 +15,7 @@ class CKEditorForm extends Component {
     }
  
     updateContent(newContent) {
+        console.log("updateContent")
         this.setState({
             content: newContent
         })
@@ -22,11 +23,13 @@ class CKEditorForm extends Component {
     
     onChange(evt){
     //   console.log("onChange fired with event info: ", evt);
+    //   console.log(newContent)
+    //   this.setState({
+    //     content: newContent
+    //   })
       var newContent = evt.editor.getData();
-      console.log(newContent)
-      this.setState({
-        content: newContent
-      })
+
+        this.props.updateContent(newContent);
     }
     
     onBlur(evt){

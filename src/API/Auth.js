@@ -7,7 +7,7 @@ import setAuthorizationToken from '../Utils/setAuthorizationToken'
 export function login(data){
   return dispatch =>{
   	return axios.post(API_HOST+'/client/login',data).then(async (res) => {
-
+	
 		console.log("[In Auth API]");
 		// console.log(res)
 		if(res.data.success){

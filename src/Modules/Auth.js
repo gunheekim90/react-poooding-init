@@ -12,11 +12,9 @@ export const setCurrentUser = createAction(SET_CURRENT_USER);
 // 	}
 // }
 
-
 const initialState = Map({
-	isAuthenticated : false,
-	user : Map({
-
+		isAuthenticated : false,
+		user : Map({
 	})
 })
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavigationBar from '../Containers/NavigationBar/NavigationBar'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { test } from '../API/data';
+import { test,getAllData } from '../API/data';
 import ModalButton from '../Components/ModalButton'
 
 
@@ -12,6 +12,15 @@ class MainPage extends Component {
 		this.state = {
 			test : false
 		}
+		this.test = this.testHandle.bind(this);
+	}
+
+	componentWillMount(){
+		console.log("componentWillMount : Data Load...");
+		this.props.getAllData().then((res)=>{
+			console.log(res);
+		})	
+
 	}
 
 	async testHandle(e){
@@ -25,11 +34,18 @@ class MainPage extends Component {
 		})
 	}
 
+	// test(){
+	// 	this.test.then((res)=>{
+	// 		console.log(res)
+	// 	})
+	// }
+
 	render(){
 		return (
 			<div>
 				<NavigationBar/>
 				MainPage
+
 				<ModalButton/>
 			</div>
 		)
@@ -37,7 +53,8 @@ class MainPage extends Component {
 }
 
 MainPage.PropTypes = {
-	test : PropTypes.func.isRequired
+	test : PropTypes.func.isRequired,
+	getAllData : PropTypes.func.isRequired
 }
 
-export default connect(null,{ test })(MainPage);
+export default connect(null,{ test,getAllData })(MainPage);

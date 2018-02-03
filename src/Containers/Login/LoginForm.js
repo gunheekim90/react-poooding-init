@@ -103,7 +103,10 @@ class LoginForm extends React.Component {
 		return (
 
 			<form onSubmit={this.onSubmit}>
-				<h1 style={{color : '#fff'}}>Login</h1>
+			    <div style={{textAlign : 'center'}}>
+				  <h1 style={{color : '#fff',fontWeight : '300'}}>Looogin</h1>
+				</div>
+				
 
 				<TextFieldGroup
 					field='email'
