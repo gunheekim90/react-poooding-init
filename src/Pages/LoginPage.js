@@ -10,7 +10,7 @@ class LoginPage extends Component {
 		return (
 			<div>
 				<NavigationBar/>
-				<div className={cx('col-md-3','col-md-offset-4','loginWrapper')}>
+				<div>
 		          <LoginForm/>
 		        </div>
 			</div>

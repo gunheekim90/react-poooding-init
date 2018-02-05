@@ -3,7 +3,8 @@ import styles from './styles.scss';
 import classNames from 'classnames/bind';
 import CKEditorForm from './CKEditorForm';
 import { Modal,ModalManager,Effect} from 'react-dynamic-modal';
-
+import AutoTextFieldGroup from './AutoTextFieldGroup.js'
+import {connect} from 'react-redux';
 const cx = classNames.bind(styles);
 const mediaQuery = window.matchMedia('(min-width: 768px)');
 console.log(mediaQuery.matches);
@@ -29,7 +30,7 @@ var customStyle = {
         left            : 0,
         right           : 0,
         bottom          : 0,
-        zIndex          : 99999999,
+        zIndex          : 0.5,
         overflow        : 'hidden',
         perspective     :  1300,
         backgroundColor : 'rgba(0, 0, 0, 0.3)'
@@ -43,21 +44,33 @@ var customStyle = {
         borderRadius            : '4px',
         outline                 : 'none',
         boxShadow               : '0 5px 10px rgba(0, 0, 0, .3)',
-        width                   : widthReponsiveValue
+        width                   : widthReponsiveValue,
+        marginTop              : '70px'
       },
       categoryButton : {
           code : {
             borderRadius            : '0px',
             background         : '#353535',
-            border : 'none'
+            border : 'none',
+            color : '#fff',
+            textShadow : 'none'
           },
           snippet : {
             borderRadius            : '0px',
             background        : 'white',
             border : 'none',
-            marginLeft : '10px'
+            marginLeft : '15px',
+            color : '#000',
+            textShadow : 'none'
           }
         
+      },
+      collapse : {
+        backgroundColor : 'orange',
+        color : '#fff',
+        outline : "none",
+        border : "none",
+        padding : "5px"
       }
 }
 
@@ -66,38 +79,85 @@ class ModalButton extends Component {
         super(props);
         this.state = {
             modalIsOpen : false,
-            contents : '',
+            content : '',
             category : 'CODE',
-            tag : ''
+            tag : '',
+            title : '',
+            authId : '',
+            date : ''
         }
 
         this.openModal = this.openModal.bind(this);
         this.pushData = this.pushData.bind(this);
         this.updateContent = this.updateContent.bind(this);
         this.changeCategory = this.changeCategory.bind(this);
+        this.weightUp = this.weightUp.bind(this);
+        this.weightDown = this.weightDown.bind(this);
+        this.updateTag = this.updateTag.bind(this);
+        this.updateTitle = this.updateTitle.bind(this);
 
     }
 
-    pushData = () =>{
+    pushData = async () =>{
         console.log("push data")
+        console.log(this.state)
+        if(this.props.isAuthenticated){
+            var date = new Date();
+            var currentDate = Number(date.getFullYear())+"-"+Number(date.getMonth()+1)+"-"+Number(date.getDate())+" "+Number(date.getHours())+":"+Number(date.getMinutes());
+            await this.setState({
+                authId : this.props.user.email,
+                date : currentDate
+            })
+            await this.props.pushData(this.state).then((res)=>{
+                console.log("저장 한 다음의 결과");
+                console.log(res)
+            })
+        }else{
+            alert("You first Sign in")
+        }
+        
     }
 
     changeCategory= (category) =>{
-        console.log(this.categoryId.innerText);  
+        // console.log(this.categoryId.innerText);  
         this.setState({
             category : category
         })
         this.categoryId.innerText = category
-        console.log(this.state.category)
+        // console.log(this.state.category)
+    }
+
+    weightUp=(e)=>{
+        // console.log("weightUp");
+        e.currentTarget.style.fontWeight = '700';
+    }
+
+    weightDown=(e)=>{
+        // console.log("weightDown");
+        e.currentTarget.style.fontWeight = '300';
     }
 
     updateContent = (newContent)=>{
-        
+
         this.setState({
             content : newContent
         })
+        // console.log(this.state.content)
+    }
 
-        console.log(this.state.content)
+    updateTag = (newTag) =>{
+        // console.log("Update Tag")
+        // console.log(newTag)
+        this.setState({
+            tag : newTag
+        })
+    }
+
+    updateTitle = (newTitle) =>{
+        // console.log(newTitle);
+        this.setState({
+            title : newTitle
+        })
     }
 
     openModal(e) {
@@ -110,12 +170,30 @@ class ModalButton extends Component {
                 effect={Effect.SlideFromRight }>
                 
                 <div className={cx('ModalWrapper')}>
-                    <h2 style={customStyle.title}>Code & Snippet</h2>
+                    <h2 style={customStyle.title} ref={h2 => this.categoryId = h2}>Code & Snippet</h2>
                     <hr/>
-                    <button className={cx('btn btn-default')} style={customStyle.categoryButton.code} onClick={this.changeCategory.bind(this,'CODE')}>CODE</button>
-                    <button className={cx('btn btn-default')} style={customStyle.categoryButton.snippet} onClick={this.changeCategory.bind(this,'SNIPPET')}>SNIPPET</button>
-                    <span style={{marginLeft : '10px'}}>=> about...<span ref={span => this.categoryId = span}>CODE</span></span>
+                    <button data-toggle="collapse" data-target="#demo" style={customStyle.collapse}>SETTING</button>
+                    <div id="demo" class="collapse" style={{marginTop : "10px"}}>
+                        <button 
+                        className={cx('btn btn-default')} 
+                        style={customStyle.categoryButton.code} 
+                        onClick={this.changeCategory.bind(this,'CODE')}
+                        onMouseOver={this.weightUp.bind(this)}
+                        onMouseOut={this.weightDown.bind(this)}
 
+                        >CODE</button>
+                        <button 
+                            className={cx('btn btn-default')} 
+                            style={customStyle.categoryButton.snippet} 
+                            onClick={this.changeCategory.bind(this,'SNIPPET')}
+                            onMouseOver={this.weightUp.bind(this)}
+                            onMouseOut={this.weightDown.bind(this)}
+                        >SNIPPET</button>
+
+                          <AutoTextFieldGroup update={this.updateTag} name="Tag"/>
+                          <AutoTextFieldGroup update={this.updateTitle} name="Title"/>
+                    </div>
+                    
                     <hr/>
                     <CKEditorForm updateContent={this.updateContent}/>
 
@@ -132,9 +210,7 @@ class ModalButton extends Component {
     );
     }
 
-
     render() { 
-
        
         widthReponsiveValue = '100%';
         return (  
@@ -148,4 +224,12 @@ class ModalButton extends Component {
     }
 }
  
-export default ModalButton;
+// export default NavigationBar;
+function mapStateToProps(state) {
+  return {
+    isAuthenticated : state.Auth.get('isAuthenticated'),
+    user : state.Auth.get('user')
+  };
+}
+
+export default connect(mapStateToProps,null)(ModalButton);

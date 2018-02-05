@@ -51,7 +51,7 @@ class NavigationBar extends React.Component {
 
     const guestLinks = (
       <ul className="nav navbar-nav navbar-right">
-        <li><Link to="/signup" style={{color : '#fff'}}>Sign up</Link></li>
+         {/*<li><Link to="/signup" style={{color : '#fff'}}>Sign up</Link></li>*/}
         <li><Link to="/login" style={{color : '#fff'}}>Login</Link></li>
       </ul>
     );
@@ -75,8 +75,8 @@ class NavigationBar extends React.Component {
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style={{backgroundColor : '#0881A3'}}>
             <ul className="nav navbar-nav">
 
-              <li><a href="/code" style={{color : '#fff'}}>CODEs</a></li>
-              <li><a href="/snippet" style={{color : '#fff'}}>SNIPPETs</a></li>
+              <li><Link to="/code" style={{color : '#fff'}}>CODEs</Link></li>
+              <li><Link to="/snippet" style={{color : '#fff'}}>SNIPPETs</Link></li>
             </ul>
             <form className="navbar-form navbar-left">
               <div className="form-group">

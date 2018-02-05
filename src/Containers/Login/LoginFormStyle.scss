@@ -1,0 +1,15 @@
+.loginForm{
+    @media screen and (min-width: 768px) {
+        padding : 70px;
+        padding-left : 500px;
+        padding-right : 500px;
+    }
+    @media screen and (max-width: 767px) {
+        padding : 30px;
+    }
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+    	padding-left : 300px;
+    	padding-right : 300px;
+
+    }
+}

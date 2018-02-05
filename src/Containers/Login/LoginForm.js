@@ -7,6 +7,9 @@ import { Map } from 'immutable';
 import validateInput from '../../Utils/loginValidation'
 import { Route, Redirect } from 'react-router'
 import isEmpty from 'lodash/isEmpty';
+import styles from './LoginFormStyle.scss';
+import classNames from 'classnames/bind';
+const cx = classNames.bind(styles);
 
 class LoginForm extends React.Component {
 
@@ -102,7 +105,7 @@ class LoginForm extends React.Component {
 
 		return (
 
-			<form onSubmit={this.onSubmit}>
+			<form onSubmit={this.onSubmit} className={cx('loginForm')}>
 			    <div style={{textAlign : 'center'}}>
 				  <h1 style={{color : '#fff',fontWeight : '300'}}>Looogin</h1>
 				</div>
@@ -127,7 +130,7 @@ class LoginForm extends React.Component {
 				/>
 
 				<div className="form-group">
-					<button className="btn btn-success btn-lg" disabled={isLoading} style={{borderRadius : '0px',border : 'none'}}>Login</button>
+					<button className="btn btn-success btn-lg" disabled={isLoading} style={{background : 'red', borderRadius : '0px',border : 'none'}}>Login</button>
 				</div>
 			</form>
 		);
