@@ -1,0 +1,193 @@
+
+
+/**
+conde container
+**/
+
+.codeContainer{
+
+
+    @media screen and (min-width: 768px) {
+        
+        margin: 0px auto;
+        border : none;
+        width: 80%;
+        height:100%;
+        border-top-left-radius: 200px;
+        border-top-right-radius: 200px;
+        overflow: hidden;
+  
+      }
+      @media screen and (max-width: 767px) {
+  
+        margin: 0px auto;
+        border : none;
+        width: 90%;
+        height:100%;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        overflow: hidden;
+      }
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+  
+      }
+  }
+  
+  .codeContainerTopImageWrapper{
+  
+      @media screen and (min-width: 768px) {
+        
+        background-image: url('../Card/space01.jpg');
+        background-position: center top;
+        background-size: 100% auto;
+        position: relative;
+        width: 100%;
+        height: 250px;
+  
+      }
+      @media screen and (max-width: 767px) {
+  
+        background-image: url('../Card/space01.jpg');
+        background-position: center top;
+        background-size: 100% auto;
+        position: relative;
+        width: 100%;
+        height: 200px;
+      }
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+  
+      }
+  
+  
+  }
+
+  .codeContainerTitle{
+    
+
+      @media screen and (min-width: 768px) {
+        
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: inline-block;
+        
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        padding: 100px;
+        font-weight: 700;
+        font-size : 110%;
+        background-image: url('./back.JPG');
+
+        
+  
+      }
+      @media screen and (max-width: 767px) {
+  
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: inline-block;
+        
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        padding: 20px;
+        font-weight: 700;
+        font-size : 110%;
+        background-image: url('./back.JPG');
+
+        text-overflow: ellipsis;
+        white-space: normal;
+      }
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+  
+      }
+  }
+
+  .codeContainerCategory{
+    @media screen and (min-width: 768px) {
+        
+        position: absolute;
+        top: 200px;
+        right: 50px;
+        color : #fff;
+  
+      }
+      @media screen and (max-width: 767px) {
+        
+    
+    
+      }
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+  
+      }
+  }
+  
+  .codeContainerText{
+    @media screen and (min-width: 768px) {
+        
+        position: absolute;
+        top: 180px;
+        right: 50px;
+        color : #fff;
+        font-size: 150%;
+  
+      }
+      @media screen and (max-width: 767px) {
+        position: absolute;
+        top: 140px;
+        left: 50px;
+        color : #fff;
+        font-size: 100%;
+    
+      }
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+  
+      }
+  }
+  .codeContainerTag{
+    @media screen and (min-width: 768px) {
+        
+        position: absolute;
+        top: 160px;
+        right: 50px;
+        color : #fff;
+  
+      }
+      @media screen and (max-width: 767px) {
+        position: absolute;
+        top: 160px;
+        right: 20px;
+        color : #fff;
+    
+      }
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+  
+      }
+  }
+  .codeContainerDate{
+    @media screen and (min-width: 768px) {
+        
+        position: absolute;
+        top: 220px;
+        right: 50px;
+        color : #fff;
+  
+      }
+      @media screen and (max-width: 767px) {
+        
+        position: absolute;
+        top: 120px;
+        right: 20px;
+        color : #fff;
+    
+      }
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+  
+      }
+  }

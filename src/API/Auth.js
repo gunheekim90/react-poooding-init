@@ -39,7 +39,6 @@ export function login(data){
 		return 'axiosError';
 	})
   }
-	
 }
 
 export function logout(){
@@ -50,5 +49,15 @@ export function logout(){
 		dispatch(setCurrentUser({}));
 		return "success"
 	}
-	
+}
+
+export function sessionCheck(){
+	console.log("session check")
+	return dispatch =>{
+		console.log("[session check api]")
+		setAuthorizationToken(false);
+		localStorage.removeItem('token');
+		dispatch(setCurrentUser({}));
+		return "success"
+	}
 }

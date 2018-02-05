@@ -1,8 +1,10 @@
 .mainContainer {
 	 @media screen and (min-width: 768px) {
+        position: relative;
         margin: 0 auto;
   		  padding: 100px;
-  		  width : 90%;
+        width : 100%;
+        height: 100%;
   		  overflow-x: auto;
    		  white-space: nowrap;
     	  -webkit-overflow-scrolling: touch;
@@ -14,10 +16,10 @@
         }
     }
     @media screen and (max-width: 767px) {
-    	  margin: 0 auto;
-		  padding: 10px;
-		  width : 100%;
-		  overflow-x: auto;
+        margin-top: 20px;
+        padding: 10px;
+        width : 100%;
+        overflow-x: auto;
    		  white-space: nowrap;
        
     }
@@ -25,3 +27,141 @@
 
     }
 }
+
+.mainContainerSearchWrapper{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.mainContainerSearch {
+  @media screen and (min-width: 768px) {
+      position: absolute;
+      width: 300px;
+      height: 100%;
+      margin: 0px auto;
+      left: 0;
+      right: 0;
+      bottom : 0;
+      top : 100px;
+
+   }
+   @media screen and (max-width: 767px) {
+      position: absolute;
+      width: 300px;
+      height: 50px;
+      margin-left: 70px;
+      left: 0;
+      right: 0;
+      bottom : 0;
+      top : 100px;
+      
+      
+   }
+   @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+
+   }
+}
+
+
+.mainContainerTitle {
+  @media screen and (min-width: 768px) {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      p {
+        color : #fff;
+        font-size: 90px;
+        font-weight: 700;position: absolute;
+        width:100%;
+        height: 200px;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: 0px auto;
+        text-shadow: 5px 5px #000;
+      }
+    
+   }
+   @media screen and (max-width: 767px) {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      p {
+        position: absolute;
+        width:100%;
+        height: 200px;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: 0px auto;
+
+        color : #fff;
+        font-size: 40px;
+        font-weight: 700;
+        text-shadow: 5px 5px #000;
+      }
+   }
+   @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+    position: relative;
+    width: 100%;
+    height: 100%;
+    p {
+      position: absolute;
+      width:100%;
+      height: 200px;
+      left: 0px;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      margin: 0px auto;
+
+      color : #fff;
+      font-size: 70px;
+      font-weight: 700;
+      text-shadow: 5px 5px #000;
+    }
+   }
+}
+
+.searchInput{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 200px;
+}
+.searchButton{
+  
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: none;
+  outline : none;
+  height: 40px;
+  background-color: cadetblue;
+  color : #fff;
+  &:hover{
+    background-color: brown;
+  }
+}
+
+.searchTitle{
+  color : #fff;
+  margin-bottom : 5px;
+  font-size : 120%;
+  font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+

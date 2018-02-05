@@ -6,7 +6,7 @@ class CKEditorForm extends Component {
         super(props);
         
         this.state = {
-            content: ''
+            content: localStorage.getItem('newContent')
         }
         this.onChange = this.onChange.bind(this);
         this.onBlur = this.onBlur.bind(this);

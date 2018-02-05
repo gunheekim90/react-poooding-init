@@ -62,6 +62,14 @@ var customStyle = {
             marginLeft : '15px',
             color : '#000',
             textShadow : 'none'
+          },
+          movie : {
+            borderRadius            : '0px',
+            background        : 'darkgreen',
+            border : 'none',
+            marginLeft : '15px',
+            color : '#fff',
+            textShadow : 'none'
           }
         
       },
@@ -111,11 +119,11 @@ class ModalButton extends Component {
             await this.props.pushData(this.state).then((res)=>{
                 console.log("저장 한 다음의 결과");
                 console.log(res)
+                localStorage.removeItem('newContent')
             })
         }else{
             alert("You first Sign in")
-        }
-        
+        } 
     }
 
     changeCategory= (category) =>{
@@ -139,6 +147,7 @@ class ModalButton extends Component {
 
     updateContent = (newContent)=>{
 
+        localStorage.setItem("newContent",newContent);
         this.setState({
             content : newContent
         })
@@ -170,7 +179,7 @@ class ModalButton extends Component {
                 effect={Effect.SlideFromRight }>
                 
                 <div className={cx('ModalWrapper')}>
-                    <h2 style={customStyle.title} ref={h2 => this.categoryId = h2}>Code & Snippet</h2>
+                    <h2 style={customStyle.title} ref={h2 => this.categoryId = h2}>Category</h2>
                     <hr/>
                     <button data-toggle="collapse" data-target="#demo" style={customStyle.collapse}>SETTING</button>
                     <div id="demo" class="collapse" style={{marginTop : "10px"}}>
@@ -189,6 +198,14 @@ class ModalButton extends Component {
                             onMouseOver={this.weightUp.bind(this)}
                             onMouseOut={this.weightDown.bind(this)}
                         >SNIPPET</button>
+
+                        <button 
+                            className={cx('btn btn-default')} 
+                            style={customStyle.categoryButton.movie} 
+                            onClick={this.changeCategory.bind(this,'MOVIE')}
+                            onMouseOver={this.weightUp.bind(this)}
+                            onMouseOut={this.weightDown.bind(this)}
+                        >MOVIE</button>
 
                           <AutoTextFieldGroup update={this.updateTag} name="Tag"/>
                           <AutoTextFieldGroup update={this.updateTitle} name="Title"/>

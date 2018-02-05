@@ -44,7 +44,7 @@ class NavigationBar extends React.Component {
 
     const userLinks = (
       <ul className="nav navbar-nav navbar-right">
-        <li><Link to="/mypage" style={{color : '#fff'}}>{user.name}</Link></li>
+        <li><Link to="/mypage" style={{color : '#fff'}}>about {user.name}</Link></li>
         <li><a href="#" onClick={this.logoutHandle.bind(this)} style={{color : '#fff'}}>Logout</a></li>
       </ul>
     );
@@ -77,6 +77,7 @@ class NavigationBar extends React.Component {
 
               <li><Link to="/code" style={{color : '#fff'}}>CODEs</Link></li>
               <li><Link to="/snippet" style={{color : '#fff'}}>SNIPPETs</Link></li>
+              <li><Link to="/movie" style={{color : '#fff'}}>MOVIEs</Link></li>
             </ul>
             <form className="navbar-form navbar-left">
               <div className="form-group">

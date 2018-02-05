@@ -1,38 +1,20 @@
 import React, { Component } from 'react';
 import NavigationBar from '../Containers/NavigationBar/NavigationBar'
+import styles from './pageStyle.scss';
+import classNames from 'classnames/bind';
+import BigCard from '../Containers/BigCard/BigCard'
+const cx = classNames.bind(styles);
 
-
-const customStyle = {
-	body : {
-		backgroundColor : '#E84A5F'
-	},
-	container : {
-		textAlign : 'center',
-		width : '100%',
-		height : '500px',
-		lineHeight : '500px',
-		backgroundColor : '#E84A5F'
-	},
-	MainAlarm : {
-		display : 'inline-block',
-		lineHeight : 'normal',
-		verticalAlign : 'middle',
-		color : '#fff',
-		fontWeight : '200',
-		fontSize : '130%'
-	}
-	
-}
 class RegisterPage extends Component {
 	render(){
 		return (
 			<div>
 				<NavigationBar/>
-				<div class="container" style={customStyle.container}>
-					<p style={customStyle.MainAlarm}>
-					  Code!
-					</p>
+				<div className={cx('mainContainerTitle')}>
+					<p> Poo<span style={{color : 'yellow'}}>o</span>ooding Dev</p>
+
 				</div>
+				<BigCard/>
 			</div>
 		)
 	}

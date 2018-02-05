@@ -7,20 +7,19 @@ import styles from './Card.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
-
 class Card extends React.Component {
 
 	render(){
 		var cardWrapper;
-		if(this.props.data.id%3 === 1){
+		if(this.props.data.category === 'CODE'){
 			
 			cardWrapper = 'cardWrapper01';
-		}else if(this.props.data.id%3 === 2){
-			
-			cardWrapper = 'cardWrapper01';
-		}else{
+		}else if(this.props.data.category === 'SNIPPET'){
 			
 			cardWrapper = 'cardWrapper03';
+		}else{
+			
+			cardWrapper = 'cardWrapper04';
 		}
 
 		return (
@@ -32,6 +31,7 @@ class Card extends React.Component {
 				
 				
 				<span className={cx('cardTitle')}>{Parser(this.props.data.title)}</span><br/>
+				<span className={cx('cardDate')}>{Parser(this.props.data.date)}</span><br/>
 				<span className={cx('cardTag')}>{Parser(this.props.data.tag)}</span><br/>
 				<button className={cx('cardButton')}>Read More</button>
 
