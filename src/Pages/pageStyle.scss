@@ -157,6 +157,66 @@
 }
 
 
+.mainContainerReddit {
+  @media screen and (min-width: 768px) {
+    .redditListGroup{
+      margin-top : -50px;
+      padding-left: 100px;
+      background: transparent;
+      border: none;
+      width: 80%;
+      .redditListItem{
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgb(211, 208, 208);
+        color : #fff;
+        a{
+          color : #fff
+        }
+    
+      }
+    }
+
+  }
+  @media screen and (max-width: 767px) {
+    .redditListGroup{
+      margin-top : 30px;
+      padding-left: 10px;
+      background: transparent;
+      border: none;
+      width: 96%;
+      .redditListItem{
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgb(211, 208, 208);
+        color : #fff;
+        a{
+          color : #fff
+        }
+    
+      }
+    }
+  }
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+    .redditListGroup{
+      margin-top : -50px;
+      padding-left: 30px;
+      background: transparent;
+      border: none;
+      width: 100%;
+      .redditListItem{
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgb(211, 208, 208);
+        color : #fff;
+        a{
+          color : #fff
+        }
+    
+      }
+    }
+  }
+}
 
 
 

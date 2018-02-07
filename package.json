@@ -53,6 +53,7 @@
     "react-tag-input": "^4.7.2",
     "react-toggle-button": "^2.2.0",
     "react-toggle-switch": "^3.0.4",
+    "reactstrap": "^5.0.0-beta",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
     "redux-thunk": "^2.2.0",

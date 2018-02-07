@@ -30,7 +30,7 @@ var customStyle = {
         left            : 0,
         right           : 0,
         bottom          : 0,
-        zIndex          : 0.5,
+        zIndex          : 10000,
         overflow        : 'hidden',
         perspective     :  1300,
         backgroundColor : 'rgba(0, 0, 0, 0.3)'

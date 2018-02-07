@@ -5,6 +5,7 @@ import MainPage from '../Pages/MainPage';
 import LoginPage from '../Pages/LoginPage';
 import RegisterPage from '../Pages/RegisterPage';
 import codePage from '../Pages/codePage';
+import codeEachPage from '../Pages/codeEachPage';
 import snippetPage from '../Pages/snippetPage';
 import MoviePage from '../Pages/moviePage';
 
@@ -18,6 +19,7 @@ class RootRoute extends Component {
 				<Route exact path="/code" component={codePage}/>
 				<Route exact path="/snippet" component={snippetPage}/>
 				<Route exact path="/movie" component={MoviePage}/>
+				<Route exact path="/code/:id" component={codeEachPage}/>
 			</div>
 		);
 	}
