@@ -7,7 +7,7 @@ import { logout } from '../../API/Auth';
 import styles from './NavigationBar.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
-
+const backColor = '#2A363B';
 
 
 class NavigationBar extends React.Component {
@@ -59,10 +59,10 @@ class NavigationBar extends React.Component {
     return (
       <nav className={cx("navbar", "navbar-inverse", "BorderStyle")}>
         
-        <div className="container-fluid" style={{backgroundColor : '#0881A3',color : '#fff'}}>
+        <div className="container-fluid" style={{backgroundColor : backColor,color : '#fff'}}>
          {/* <!-- Brand and toggle get grouped for better mobile display -->*/}
-          <div className="navbar-header" style={{backgroundColor : '#0881A3'}}>
-            <button type="button" className="navbar-toggle collapsed" style={{backgroundColor : '#0881A3'}} data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <div className="navbar-header" style={{backgroundColor : backColor}}>
+            <button type="button" className="navbar-toggle collapsed" style={{backgroundColor : backColor}} data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
               <span className="sr-only">Toggle navigation</span>
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
@@ -72,18 +72,21 @@ class NavigationBar extends React.Component {
           </div>
 
           {/*<!-- Collect the nav links, forms, and other content for toggling -->*/}
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style={{backgroundColor : '#0881A3'}}>
+          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style={{backgroundColor : backColor}}>
             <ul className="nav navbar-nav">
 
-              <li><Link to="/code" style={{color : '#fff'}}>CODEs</Link></li>
-              <li><Link to="/snippet" style={{color : '#fff'}}>SNIPPETs</Link></li>
-              <li><Link to="/movie" style={{color : '#fff'}}>MOVIEs</Link></li>
+              <li><Link to="/code" style={{color : '#fff'}}>코드</Link></li>
+              <li><Link to="/snippet" style={{color : '#fff'}}>토막글</Link></li>
+              <li><Link to="/movie" style={{color : '#fff'}}>영화</Link></li>
+              <li><Link to="/movie" style={{color : '#fff'}}>홈페이지 소개</Link></li>
+              <li><Link to="/movie" style={{color : '#fff'}}>poooding 소개</Link></li>
+              
             </ul>
             <form className="navbar-form navbar-left">
               <div className="form-group">
                 <input type="text" className="form-control" placeholder="Search"/>
               </div>
-              <button type="submit" className="btn btn-default">Search</button>
+              <button type="submit" className="btn btn-default" style={{background : 'orange',color : '#fff', border : 'none'}}>글 검색</button>
             </form>
             <div className="container-fluid">
                { isAuthenticated ? userLinks : guestLinks }

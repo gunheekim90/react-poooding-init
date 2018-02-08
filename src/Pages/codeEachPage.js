@@ -17,7 +17,7 @@ class codeEachPage extends Component {
 			<div>
 				<NavigationBar/>
 				<div className={cx('mainContainerTitle')}>
-					<p> Poo<span style={{color : 'yellow'}}>o</span>ooding Dev</p>
+					<p> Poooding Dev</p>
 
 				</div>
 				<BigCard id={this.props.match.params.id}/>

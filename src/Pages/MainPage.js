@@ -104,16 +104,25 @@ class MainPage extends Component {
 			<div>
 				<NavigationBar/>
 				<div className={cx('mainContainerTitle')}>
-					<p> Po<span style={{color : 'green'}}>o</span><span style={{color : 'yellow'}}>o</span><span style={{color : 'red'}}>o</span><span style={{color : 'blue'}}>o</span>ding Dev</p>
+					<p> 
+						
+						Poooding Dev  
+					  
+					  <span className={cx("badge", "badge-danger", "aboutHomepageBadge")} style={{textShadow : 'none',padding : '10px'}}>홈페이지 소개</span>
+						<span className={cx("badge", "badge-danger", "aboutMeBadge")} style={{textShadow : 'none',padding : '10px'}}>Poooding 소개</span>
 
-				</div><br/><br/>
+						
+					
+					
+					</p>
+
+				</div><br/><br/><br/><br/>
 				<div className={cx('mainContainer')}
 					 onMouseDown={this.mouseDownEvent.bind(this)}
 					 onMouseMove={this.onMouseMoveEvent.bind(this)}
 					 onMouseUp={this.mouseUpEvent.bind(this)}
 					 ref={div => this.mainContainer = div}
 				><br/><br/>
-				
 				
 					{this.props.data.map((each, i) => {
                         return (<CardComponent key={i} data={each} id={each.id}/>);
@@ -135,7 +144,7 @@ class MainPage extends Component {
 						{this.state.redditNew.map((item,i)=>{
 							
 							return(
-								<ListGroupItem className={cx('redditListItem')}>{i+1}.  <a href={item.data.url}>{item.data.title}</a></ListGroupItem>
+								<ListGroupItem key={i} className={cx('redditListItem')}>{i+1}.  <a href={item.data.url}>{item.data.title}</a></ListGroupItem>
 							);
 						})}
 						</ListGroup>
@@ -145,7 +154,7 @@ class MainPage extends Component {
 						<ListGroupItem style={{color : "#fff", textAlign : 'center', background : 'transparent', fontSize : '120%'}}>Reddit Top 5.</ListGroupItem>
 							{this.state.redditTop.map((item,i)=>{
 								return(
-									<ListGroupItem className={cx('redditListItem')}>{i+1}.  <a href={item.data.url}>{item.data.title}</a></ListGroupItem>
+									<ListGroupItem key={i} className={cx('redditListItem')}>{i+1}.  <a href={item.data.url}>{item.data.title}</a></ListGroupItem>
 								);
 							})}
 							
@@ -157,7 +166,7 @@ class MainPage extends Component {
 						{this.state.redditNew.map((item,i)=>{
 							
 							return(
-								<ListGroupItem className={cx('redditListItem')}>{i+1}.  <a href={item.data.url}>{item.data.title}</a></ListGroupItem>
+								<ListGroupItem key={i} className={cx('redditListItem')}>{i+1}.  <a href={item.data.url}>{item.data.title}</a></ListGroupItem>
 							);
 						})}
 						</ListGroup>
@@ -167,7 +176,7 @@ class MainPage extends Component {
 				</div>
 
 			    {isAuthenticated ? Modal : noModal}
-
+						{Modal}
 				
 				
 			</div>

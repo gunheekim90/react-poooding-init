@@ -18,7 +18,8 @@ class AutoTextFieldGroup extends Component {
   constructor(props){
     super(props)
     this.state = {
-      options : ["Javascript", "Spring", "ubuntu", "server","react"]
+      options : ["Javascript", "Spring", "ubuntu", "server","react"],
+      value : ''
     }
 
     this.update = this.update.bind(this);
@@ -27,15 +28,21 @@ class AutoTextFieldGroup extends Component {
   update(evt){
     // console.log("In AutoTextFieldGroup");
     // console.log(evt.target.value);
+    this.setState({
+      value : evt.target.value
+    })
     this.props.update(evt.target.value);
+
   }
 
   render(){
+   
     return (
       <div style={{marginTop : '10px'}}>
       <span>{this.props.name} : </span><input 
         style={customStyle.input}
         onChange={evt => this.update(evt)}
+        value={this.state.value}
       />
       </div>
     )

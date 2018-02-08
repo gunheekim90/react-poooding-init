@@ -7,7 +7,7 @@ const TextFieldGroup = ({ field, value, label, error, type, onChange, checkUserE
   return (
 
       <div className={classnames('form-group', { 'has-error': error })} style={{color : '#fff',fontWeight : '100'}}>
-        <label className="control-label">{label}</label>
+        <label className="control-label" style={{color : '#fff'}}>{label}</label>
         <input
           
           onChange={onChange}
@@ -17,7 +17,7 @@ const TextFieldGroup = ({ field, value, label, error, type, onChange, checkUserE
           name={field}
           className="form-control"
         />
-      {error && <span className="help-block">{error}</span>}
+      {error && <span className="help-block" style={{color : '#fff'}}>{error}</span>}
       </div>  
     );
 }

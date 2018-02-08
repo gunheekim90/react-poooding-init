@@ -218,6 +218,58 @@
   }
 }
 
+.aboutHomepageBadge {
+  @media screen and (min-width: 768px) {
+    background-color: rgb(42, 54, 59);
+  }
+  @media screen and (max-width: 767px) {
+ 
+    width: 150px;
+    margin-top: 10px;
+    margin-left : 20px;
+    float: left;
+    background-color: rgb(42, 54, 59);
+
+  }
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+ 
+  }
+}
+
+.aboutMeBadge {
+  @media screen and (min-width: 768px) {
+    background-color: #EA9215;
+  }
+  @media screen and (max-width: 767px) {
+    width: 150px;
+    margin-top: 10px;
+    margin-right: 20px;
+    background-color: #EA9215;
+    float: right;
+
+  }
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+ 
+  }
+}
+
+.codePageTheme {
+  @media screen and (min-width: 768px) {
+    font-size : 150%;
+    padding-top: 50px;
+    font-weight: 600;
+  }
+  @media screen and (max-width: 767px) {
+    
+  }
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+ 
+  }
+}
+
+
+
+
 
 
 

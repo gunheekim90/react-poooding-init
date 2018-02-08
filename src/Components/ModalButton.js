@@ -5,6 +5,9 @@ import CKEditorForm from './CKEditorForm';
 import { Modal,ModalManager,Effect} from 'react-dynamic-modal';
 import AutoTextFieldGroup from './AutoTextFieldGroup.js'
 import {connect} from 'react-redux';
+import Dropdown from 'react-dropdown'
+
+
 const cx = classNames.bind(styles);
 const mediaQuery = window.matchMedia('(min-width: 768px)');
 console.log(mediaQuery.matches);
@@ -92,7 +95,8 @@ class ModalButton extends Component {
             tag : '',
             title : '',
             authId : '',
-            date : ''
+            date : '',
+            theme : 'normal'
         }
 
         this.openModal = this.openModal.bind(this);
@@ -103,6 +107,7 @@ class ModalButton extends Component {
         this.weightDown = this.weightDown.bind(this);
         this.updateTag = this.updateTag.bind(this);
         this.updateTitle = this.updateTitle.bind(this);
+        this.updateTheme = this.updateTheme.bind(this);
 
     }
 
@@ -157,6 +162,7 @@ class ModalButton extends Component {
     updateTag = (newTag) =>{
         // console.log("Update Tag")
         // console.log(newTag)
+     
         this.setState({
             tag : newTag
         })
@@ -164,13 +170,26 @@ class ModalButton extends Component {
 
     updateTitle = (newTitle) =>{
         // console.log(newTitle);
+      
         this.setState({
             title : newTitle
         })
     }
 
+    updateTheme = (newTheme) =>{
+        // console.log(newTitle);
+  
+        this.setState({
+            theme : newTheme
+        })
+    }
+
     openModal(e) {
         e.preventDefault();
+        const options = [
+            'one', 'two', 'three'
+        ];
+        const defaultOption = options[0];
         ModalManager.open(
         
             <Modal
@@ -207,8 +226,10 @@ class ModalButton extends Component {
                             onMouseOut={this.weightDown.bind(this)}
                         >MOVIE</button>
 
-                          <AutoTextFieldGroup update={this.updateTag} name="Tag"/>
-                          <AutoTextFieldGroup update={this.updateTitle} name="Title"/>
+                          <AutoTextFieldGroup update={this.updateTag} name="Tag" storageName="newTag"/>
+                          <AutoTextFieldGroup update={this.updateTitle} name="Title" storageName="newTitle" /><br/>
+                          <AutoTextFieldGroup update={this.updateTheme} name="Theme" storageName="newTheme"/><br/>
+                          {/* <Dropdown className={cx('dropdownCustom')} options={options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" /> */}
                     </div>
                     
                     <hr/>

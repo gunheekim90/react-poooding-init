@@ -13,7 +13,8 @@ class BigCard extends Component {
             title : '',
             tag : '',
             content : '',
-            date : ''
+            date : '',
+            category : ''
         }
     }
 
@@ -26,16 +27,26 @@ class BigCard extends Component {
                 title : res.data.data.title,
                 tag : res.data.data.tag,
                 content : res.data.data.content,
-                date : res.data.data.date
+                date : res.data.data.date,
+                category : res.data.data.category
             })
         })
     
     }
     render() { 
+        var cardWrapper;
+		if(this.state.category === 'CODE'){
+			cardWrapper = 'codeContainerTopImageWrapper1';
+		}else if(this.state.category === 'SNIPPET'){
+			cardWrapper = 'codeContainerTopImageWrapper3';
+		}else{
+			cardWrapper = 'codeContainerTopImageWrapper4';
+        }
+        
         return (  
         <div className={cx('codeContainer')}>
             
-                <div className={cx('codeContainerTopImageWrapper')}>
+                <div className={cx(cardWrapper)}>
                     
 
                     <p className={cx('codeContainerText')}>{this.state.title}</p>
