@@ -10,7 +10,7 @@ import Dropdown from 'react-dropdown'
 
 const cx = classNames.bind(styles);
 const mediaQuery = window.matchMedia('(min-width: 768px)');
-console.log(mediaQuery.matches);
+// console.log(mediaQuery.matches);
 var widthReponsiveValue;
 if(mediaQuery.matches){
     widthReponsiveValue = '60%';
@@ -112,8 +112,8 @@ class ModalButton extends Component {
     }
 
     pushData = async () =>{
-        console.log("push data")
-        console.log(this.state)
+        // console.log("push data")
+        // console.log(this.state)
         if(this.props.isAuthenticated){
             var date = new Date();
             var currentDate = Number(date.getFullYear())+"-"+Number(date.getMonth()+1)+"-"+Number(date.getDate())+" "+Number(date.getHours())+":"+Number(date.getMinutes());
@@ -122,8 +122,8 @@ class ModalButton extends Component {
                 date : currentDate
             })
             await this.props.pushData(this.state).then((res)=>{
-                console.log("저장 한 다음의 결과");
-                console.log(res)
+                // console.log("저장 한 다음의 결과");
+                // console.log(res)
                 localStorage.removeItem('newContent')
             })
         }else{

@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import NavigationBar from '../Containers/NavigationBar/NavigationBar'
 import styles from './pageStyle.scss';
 import classNames from 'classnames/bind';
+import BigCard from '../Containers/BigCard/BigCard';
 import { getThemeData } from '../API/data';
 import { connect } from 'react-redux';
 import { lchmod } from 'fs';
 import { Link, NavLink  } from 'react-router-dom';
 import TagButtons from '../Containers/Tag/TagButtons'
-
 const cx = classNames.bind(styles);
 
-class codePage extends Component {
+class codeThemePage extends Component {
 
 	constructor(props){
 		super(props);
@@ -25,18 +25,12 @@ class codePage extends Component {
 		let data = {
 			category : 'CODE'
 		}
-		await this.props.getThemeData(data).then((res)=>{
-			// console.log(res.data[0])
-			this.setState({
-				themes : res.data[0]
-			})
-		})
+		
 	}
 	
 
 	render(){
-		// console.log("state")
-		// console.log(this.state.themes);
+	
 		return (
 			<div>
 				<NavigationBar/>
@@ -49,7 +43,7 @@ class codePage extends Component {
 				<div className={cx('codePageTheme')} style={{width : '100%',textAlign : 'center',color : '#fff',position : 'relative',marginTop : '150px'}}>
 					<p>- 태그(Tag) -</p><br/>
 					<div className={cx('container')}>
-						<TagButtons/>
+					<TagButtons/>
 					</div><br/><br/>
 					<p>- 주제(Title) -</p><br/>
 					<div>
@@ -98,4 +92,4 @@ class codePage extends Component {
 	}
 }
 
-export default connect(null,{ getThemeData })(codePage);
+export default connect(null,{})(codeThemePage);

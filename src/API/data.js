@@ -8,7 +8,7 @@ export function test(data){
     return dispatch =>{
         console.log(data);
         return axios.post(API_HOST+'/client/test',data).then((res)=>{
-            console.log(res.data);
+            // console.log(res.data);
             return res.data;
         })
     }
@@ -40,3 +40,25 @@ export function pushData(newData){
         })
     }
 }
+
+export function getThemeData(category){
+    return dispatch =>{
+        return axios.post(API_HOST+'/client/getThemeData',category).then((res)=>{
+            // console.log("getTheme Data");
+            return res.data;
+        })
+    }
+}
+
+export function getTagData(tag){
+    var data = {
+        tag : tag
+    }
+    return dispatch =>{
+        return axios.post(API_HOST+'/client/getTagData',data).then((res)=>{
+           
+            return res.data;
+        })
+    }
+}
+

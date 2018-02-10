@@ -9,6 +9,9 @@ import codeEachPage from '../Pages/codeEachPage';
 import snippetPage from '../Pages/snippetPage';
 import MoviePage from '../Pages/moviePage';
 
+import codeTagPage from '../Pages/codeTagPage';
+import codeThemePage from '../Pages/codeThemePage';
+
 class RootRoute extends Component {
 	render(){
 		return (
@@ -20,6 +23,8 @@ class RootRoute extends Component {
 				<Route exact path="/snippet" component={snippetPage}/>
 				<Route exact path="/movie" component={MoviePage}/>
 				<Route exact path="/code/:id" component={codeEachPage}/>
+				<Route exact path="/code/tag/:id" component={codeTagPage}/>
+				<Route exact path="/code/theme/:id" component={codeThemePage}/>
 			</div>
 		);
 	}

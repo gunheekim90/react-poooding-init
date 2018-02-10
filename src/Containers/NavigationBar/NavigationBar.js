@@ -44,7 +44,6 @@ class NavigationBar extends React.Component {
 
     const userLinks = (
       <ul className="nav navbar-nav navbar-right">
-        <li><Link to="/mypage" style={{color : '#fff'}}>about {user.name}</Link></li>
         <li><a href="#" onClick={this.logoutHandle.bind(this)} style={{color : '#fff'}}>Logout</a></li>
       </ul>
     );
@@ -96,11 +95,6 @@ class NavigationBar extends React.Component {
       </nav>
     );
   }
-}
-
-NavigationBar.PropTypes = {
-  auth : PropTypes.object.isRequired,
-  logout : PropTypes.func.isRequired
 }
 
 // export default NavigationBar;

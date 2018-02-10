@@ -10,11 +10,6 @@ const cx = classNames.bind(styles);
 
 class Card extends React.Component {
 
-	constructor(props){
-		super(props);
-
-	}
-
 
 	render(){
 		var cardWrapper;

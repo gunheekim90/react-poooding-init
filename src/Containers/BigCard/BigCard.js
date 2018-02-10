@@ -19,10 +19,10 @@ class BigCard extends Component {
     }
 
     componentWillMount(){
-       console.log(this.props.id)
+    //    console.log(this.props.id)
        
        axios.get(API_HOST+'/client/getData/'+this.props.id).then((res)=>{
-            console.log(res.data.data);
+            // console.log(res.data.data);
             this.setState({
                 title : res.data.data.title,
                 tag : res.data.data.tag,
