@@ -3,7 +3,7 @@ import NavigationBar from '../Containers/NavigationBar/NavigationBar'
 import styles from './pageStyle.scss';
 import classNames from 'classnames/bind';
 import BigCard from '../Containers/BigCard/BigCard';
-import { getThemeData } from '../API/data';
+import { getThemeDataSpecific } from '../API/data';
 import { connect } from 'react-redux';
 import { lchmod } from 'fs';
 import { Link, NavLink  } from 'react-router-dom';
@@ -22,9 +22,17 @@ class codeThemePage extends Component {
 
 
 	async componentWillMount(){
+
 		let data = {
-			category : 'CODE'
+			theme : this.props.match.params.id
 		}
+
+		await this.props.getThemeDataSpecific(data).then((res)=>{
+			// console.log(res.data[0])
+			this.setState({
+				themes : res.data[0]
+			})
+		})
 		
 	}
 	
@@ -41,11 +49,7 @@ class codeThemePage extends Component {
 					</p>
 				</div>
 				<div className={cx('codePageTheme')} style={{width : '100%',textAlign : 'center',color : '#fff',position : 'relative',marginTop : '150px'}}>
-					<p>- 태그(Tag) -</p><br/>
-					<div className={cx('container')}>
-					<TagButtons/>
-					</div><br/><br/>
-					<p>- 주제(Title) -</p><br/>
+			
 					<div>
 						{this.state.themes.map((element,i)=>{
 
@@ -57,34 +61,39 @@ class codeThemePage extends Component {
 						let matchNode = /node/i.exec(element.tag);
 						var backgroundImage;
 						if(matchReact != null){
-							backgroundImage = './js-min.PNG';
+							backgroundImage = '/js-min.PNG';
 						}else if(matchJavaScript != null){
-							backgroundImage = './js-min.PNG';
+							backgroundImage = '/js-min.PNG';
 						}else if(matchMysql != null){
-							backgroundImage = './mysql-min.PNG';
+							backgroundImage = '/mysql-min.PNG';
 						}else if(matchCss != null){
-							backgroundImage = './css-min.PNG';
+							backgroundImage = '/css-min.PNG';
 						}else if(matchBlock != null){
-							backgroundImage = './block-min.PNG';
+							backgroundImage = '/block-min.PNG';
 						}else{
-							backgroundImage = './js-min.PNG';
+							backgroundImage = '/js-min.PNG';
 						}
-							
+							console.log(backgroundImage)
 							return (
 								<div className={cx('codePageContent')} 
-									 key={i} style={{backgroundImage : "url('"+backgroundImage+"')", backgroundSize : "100% auto"}}
+									 key={i} style={{backgroundImage : "url('"+backgroundImage+"')", backgroundSize : "100% auto", border : "none !important"}}
 								> 
-
+									<br/>
 									<p>{element.theme}</p>
 									<span>{element.count} Posts</span><br/>
-									<span>UPDATED : {element.date}</span>
+									<br/>
 
 								</div>
 							)
 						})}
 						
 						
-					</div>
+					</div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+					<p>- 태그(Tag) -</p><br/>
+					<div className={cx('container')}>
+					<TagButtons/>
+					</div><br/><br/>
+				
 
 				</div>
 			</div>
@@ -92,4 +101,4 @@ class codeThemePage extends Component {
 	}
 }
 
-export default connect(null,{})(codeThemePage);
+export default connect(null,{getThemeDataSpecific})(codeThemePage);

@@ -13,16 +13,18 @@ class TagButtons extends Component {
         
         return (  
         <div>
-            <Link to='/code/tag/react' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#React</span></Link>
-			<Link to='/code/tag/NodeJS' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#NodeJS</span></Link>
-			<Link to='/code/tag/Spring' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#Spring</span></Link>
-			<Link to='/code/tag/CSS' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#CSS</span></Link>
-			<Link to='/code/tag/Mysql' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#Mysql</span></Link><br/><br/>
-			<Link to='/code/tag/블록체인' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#Smart Contract</span></Link>
-			<Link to='/code/tag/react' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#React Native</span></Link><br/><br/>
-			<Link to='/code/tag/JAVA' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#JAVA</span></Link>
-			<Link to='/code/tag/블록체인' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#블록체인</span></Link>
-        </div>
+            <a href='/code/tag/react' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#React</span></a>
+			<a href='/code/tag/NodeJS' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#NodeJS</span></a>
+			<a href='/code/tag/Spring' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#Spring</span></a>
+			<a href='/code/tag/CSS' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#CSS</span></a>
+			<a href='/code/tag/Mysql' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#Mysql</span></a><br/><br/>
+			<a href='/code/tag/블록체인' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#Smart Contract</span></a>
+			<a href='/code/tag/react' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#React Native</span></a><br/><br/>
+			<a href='/code/tag/JAVA' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#JAVA</span></a>
+			<a href='/code/tag/블록체인' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#블록체인</span></a>
+			<a href='/code/tag/server' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#Server</span></a>
+			<a href='/code/tag/server' style={{color : "#fff"}}><span style={{padding : '10px', border : '1px solid #fff', borderRadius : '10px',cursor : 'pointer'}}>#Android</span></a>       
+		</div>
 
         )
     }

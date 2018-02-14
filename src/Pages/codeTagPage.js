@@ -31,16 +31,20 @@ class codeTagPage extends Component {
             })
 		})	
 	}
-	shouldComponentUpdate(nextProps, nextState){
-        this.props.getTagData(this.props.match.params.id).then((res)=>{
-            // console.log(res.data)
-			this.setState({
-                data : res.data
-            })
-		})	
+	// shouldComponentUpdate(nextProps, nextState){
+	// 	if(this.state.data.length == 0){
 
-        return true;
-    }
+	// 	}else{
+
+	// 	}
+    //     this.props.getTagData(this.props.match.params.id).then((res)=>{
+    //         // console.log(res.data)
+	// 		this.setState({
+    //             data : res.data
+    //         })
+	// 	})	
+    //     return true;
+    // }
 
 	render(){
         

@@ -75,15 +75,17 @@ class codePage extends Component {
 						}else{
 							backgroundImage = './js-min.PNG';
 						}
-							
+						let url = '/code/theme/'+element.theme
 							return (
 								<div className={cx('codePageContent')} 
 									 key={i} style={{backgroundImage : "url('"+backgroundImage+"')", backgroundSize : "100% auto"}}
 								> 
-
+									<Link to={url} style={{color : "#fff"}}>
 									<p>{element.theme}</p>
+									</Link>
 									<span>{element.count} Posts</span><br/>
 									<span>UPDATED : {element.date}</span>
+									
 
 								</div>
 							)
