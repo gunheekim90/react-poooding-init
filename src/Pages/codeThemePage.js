@@ -3,11 +3,12 @@ import NavigationBar from '../Containers/NavigationBar/NavigationBar'
 import styles from './pageStyle.scss';
 import classNames from 'classnames/bind';
 import BigCard from '../Containers/BigCard/BigCard';
-import { getThemeDataSpecific } from '../API/data';
+import { getThemeDataSpecific, getThemeEachData } from '../API/data';
 import { connect } from 'react-redux';
 import { lchmod } from 'fs';
 import { Link, NavLink  } from 'react-router-dom';
 import TagButtons from '../Containers/Tag/TagButtons'
+import CardComponent from '../Containers/Card/CardComponent'
 const cx = classNames.bind(styles);
 
 class codeThemePage extends Component {
@@ -15,30 +16,40 @@ class codeThemePage extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			themes : [{}]
+			themes : [],
+			data : [],
+			id : this.props.match.params.id
 		}
+
+		this.props.getThemeEachData({theme : this.state.id}).then((res)=>{
+			console.log(res.data[0])
+			this.setState({
+				data : res.data[0]
+			})
+		})
 
 	}
 
 
 	async componentWillMount(){
-
-		let data = {
-			theme : this.props.match.params.id
-		}
-
-		await this.props.getThemeDataSpecific(data).then((res)=>{
-			// console.log(res.data[0])
+		console.log("1")
+		console.log(this.state.id)
+		await this.props.getThemeDataSpecific({theme : this.state.id}).then((res)=>{
+			console.log(res)
 			this.setState({
 				themes : res.data[0]
 			})
 		})
+
+		console.log("componentWillMount");
+		console.log(this.state.themes);
+
 		
 	}
 	
 
 	render(){
-	
+
 		return (
 			<div>
 				<NavigationBar/>
@@ -49,7 +60,11 @@ class codeThemePage extends Component {
 					</p>
 				</div>
 				<div className={cx('codePageTheme')} style={{width : '100%',textAlign : 'center',color : '#fff',position : 'relative',marginTop : '150px'}}>
-			
+				
+					<p>- 태그(Tag) -</p><br/>
+					<div className={cx('container')}>
+					<TagButtons/>
+					</div><br/>
 					<div>
 						{this.state.themes.map((element,i)=>{
 
@@ -86,19 +101,28 @@ class codeThemePage extends Component {
 								</div>
 							)
 						})}
+					
 						
-						
-					</div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-					<p>- 태그(Tag) -</p><br/>
-					<div className={cx('container')}>
-					<TagButtons/>
-					</div><br/><br/>
-				
+					</div><br/>
+					
+
 
 				</div>
+				<div className={cx('mainContainer')}>
+					   <div>
+					  	 {this.state.data.map((each, i) => {
+	                        
+	                        return (<CardComponent key={i} data={each} id={each.id}/>);
+	                     })}
+						</div>
+						
+				</div>
+
+					
+				
 			</div>
 		)
 	}
 }
 
-export default connect(null,{getThemeDataSpecific})(codeThemePage);
+export default connect(null,{getThemeDataSpecific,getThemeEachData})(codeThemePage);

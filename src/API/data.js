@@ -51,8 +51,18 @@ export function getThemeData(category){
 }
 
 export function getThemeDataSpecific(theme){
+
     return dispatch =>{
         return axios.post(API_HOST+'/client/getThemeDataSpecific',theme).then((res)=>{
+            // console.log("getTheme Data");
+            return res.data;
+        })
+    }
+}
+
+export function getThemeEachData(theme){
+    return dispatch =>{
+        return axios.post(API_HOST+'/client/getThemeEachData',theme).then((res)=>{
             // console.log("getTheme Data");
             return res.data;
         })
