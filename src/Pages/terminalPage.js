@@ -53,7 +53,7 @@ class terminalPage extends Component {
             this.state.terminalInput.push(
             
                 <div>
-                    <p>* 명령어 몇 개 없습니다. 실망하지 마세요. 업데이트 하도록 하겠습니다.</p>
+                    <p>* 명령어 몇 개 없습니다. 업데이트 하도록 하겠습니다.</p>
                     <ul>
                      <li>help</li>
                      <li>status</li>
@@ -89,7 +89,7 @@ class terminalPage extends Component {
 
              this.state.terminalInput.push(
                 <div>
-                    <p><span style={{color : 'yellow'}}>YELLOW</span>: 직장을 다니고 있지만, 프로젝트할 여분의 시간이 있습니다. 편하게 연락주세요</p>
+                    <p><span style={{color : 'yellow'}}>YELLOW</span>: 재미있는 프로젝트는 언제나 환영입니다. 편하게 연락주세요</p>
                     <p>Email : gunhee21@gmail.com</p>
                 </div>
              )
