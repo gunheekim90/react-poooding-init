@@ -36,7 +36,7 @@ class terminalPage extends Component {
     
     _handleKeyPress = (e) => {
         if (e.key === 'Enter') {
-          console.log(e.target.value);
+         
           e.target.setAttribute('disabled','true')
           this.setState({
               input : Number(this.state.input) + 1

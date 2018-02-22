@@ -46,7 +46,7 @@ class HomePage extends Component {
     async componentWillMount(){
 
 		await this.props.getHomePageData().then((res)=>{
-            console.log(res.data)
+            
 			this.setState({
                 code : res.data[0].count,
                 movie : res.data[1].count,
@@ -58,7 +58,7 @@ class HomePage extends Component {
 
 	openModal(e) {
         e.preventDefault();
-		console.log("asdasdfasd")
+		
         ModalManager.open(
         
             <Modal
@@ -72,7 +72,6 @@ class HomePage extends Component {
     }
 	render(){
 
-        console.log(this.state)
 		return (
 			<div>
 				<NavigationBar/>

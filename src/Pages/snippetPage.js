@@ -45,7 +45,7 @@ class snippetPage extends Component {
 			category : 'SNIPPET'
 		}
 		await this.props.getSnippetData(data).then((res)=>{
-            console.log(res.data)
+            
 			this.setState({
                 data : res.data
             })

@@ -37,10 +37,10 @@ class MainPage extends Component {
 		})	
 		const response1 = await fetch('https://www.reddit.com/r/programming/top/.json?limit=5');
 		const redditTop = await response1.json();
-		console.log(redditTop.data.children)
+		
 		const response2 = await fetch('https://www.reddit.com/r/programming/new/.json?limit=5');
 		const redditNew = await response2.json();
-		console.log(redditNew.data.children)
+		
 		await this.setState({
 			redditNew : redditNew.data.children,
 			redditTop : redditTop.data.children
@@ -53,16 +53,6 @@ class MainPage extends Component {
 		
 	}
 
-	async testHandle(e){
-		e.preventDefault();
-		let testData = {
-			success : 200,
-			message : "test 입니당"
-		}
-		await this.props.test(testData).then((res)=>{
-			console.log(res);
-		})
-	}
 
 	mouseDownEvent(evt){
 		// console.log(evt.clientX);

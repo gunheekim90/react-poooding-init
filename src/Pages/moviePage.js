@@ -45,7 +45,7 @@ class moviePage extends Component {
 			category : 'MOVIE'
 		}
 		await this.props.getSnippetData(data).then((res)=>{
-            console.log(res.data)
+     
 			this.setState({
                 data : res.data
             })

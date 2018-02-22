@@ -35,7 +35,7 @@ class codeThemePage extends Component {
 	async componentWillMount(){
 
 		await this.props.getThemeDataSpecific({theme : this.state.id}).then((res)=>{
-			console.log(res)
+			
 			this.setState({
 				themes : res.data
 			})
