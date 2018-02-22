@@ -208,7 +208,8 @@ class terminalPage extends Component {
 		return (
 			<div className={cx('terminalBody')} onClick={this.bodyClick}>
                 <p>Benchmark GIT Bash$</p>
-				<p>This is fake terminal for developer who familiarity with console!</p>
+				<p>This is fake terminal for developer who familiar with console!</p>
+                <p>And, this is made with react</p>
                 <p>If you want to know about me, please type 'help'</p><br/>
 
                 {this.state.terminalInput.map((terminalInput, i) => {

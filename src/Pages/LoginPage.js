@@ -11,7 +11,7 @@ class LoginPage extends Component {
 		return (
 			<div>
 				<NavigationBar/>
-				<PageHead/>
+				<PageHead/><br/><br/><br/>
 				<div>
 		          <LoginForm/>
 		        </div>

@@ -15,7 +15,7 @@ class codePage extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			themes : [{}]
+			themes : []
 		}
 
 	}
@@ -28,7 +28,7 @@ class codePage extends Component {
 		await this.props.getThemeData(data).then((res)=>{
 			// console.log(res.data[0])
 			this.setState({
-				themes : res.data[0]
+				themes : res.data
 			})
 		})
 	}

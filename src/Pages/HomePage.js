@@ -67,9 +67,7 @@ class HomePage extends Component {
                 
 				<img src='/homepageStruct.jpg' className={cx('homePageImage')}/>
             </Modal>
-        
-        
-        
+
     	);
     }
 	render(){

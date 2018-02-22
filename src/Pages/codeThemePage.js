@@ -23,9 +23,9 @@ class codeThemePage extends Component {
 		}
 
 		this.props.getThemeEachData({theme : this.state.id}).then((res)=>{
-			console.log(res.data[0])
+			
 			this.setState({
-				data : res.data[0]
+				data : res.data
 			})
 		})
 
@@ -33,17 +33,14 @@ class codeThemePage extends Component {
 
 
 	async componentWillMount(){
-		console.log("1")
-		console.log(this.state.id)
+
 		await this.props.getThemeDataSpecific({theme : this.state.id}).then((res)=>{
 			console.log(res)
 			this.setState({
-				themes : res.data[0]
+				themes : res.data
 			})
 		})
 
-		console.log("componentWillMount");
-		console.log(this.state.themes);
 
 		
 	}
