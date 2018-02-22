@@ -52,9 +52,9 @@ export function logout(){
 }
 
 export function sessionCheck(){
-	console.log("session check")
+
 	return dispatch =>{
-		console.log("[session check api]")
+	
 		setAuthorizationToken(false);
 		localStorage.removeItem('token');
 		dispatch(setCurrentUser({}));
