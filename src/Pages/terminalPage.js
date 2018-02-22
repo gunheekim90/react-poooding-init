@@ -59,7 +59,8 @@ class terminalPage extends Component {
                      <li>status</li>
                      <li>about --poooding</li>
                      <li>about --homepage</li>
-                     <li>project</li>
+                     <li>portfolio</li>
+                     <li>skill</li>
                      <li>clear</li>
                      <li>exit</li>
                     </ul>
@@ -78,10 +79,19 @@ class terminalPage extends Component {
                     <p><span style={{color : 'yellow'}}>특기</span> : 빠른 프로토타입 만들고 피드백으로 두들겨 맞은 뒤, 빠르게 수정하기</p>
                     
                     <p><span style={{color : 'yellow'}}>취미</span> : 코인노래방가기</p>
-                    <p><span style={{color : 'yellow'}}>잘 다룬다 생각하는 기술</span> : Javascript 계열(Node.JS, React.JS, React Native, TypeScript)</p>
+                    <p><span style={{color : 'yellow'}}>자신 있는 기술</span> : Javascript 계열(Node.JS, React.JS, React Native, TypeScript)</p>
                     <p><span style={{color : 'yellow'}}>다룰 수 있는 기술</span> : ejs, 전자정부 프레임워크(Spring), Android, geth, Solidity, AWS, Ubuntu, python 초큼</p>
 
                     <p><span style={{color : 'yellow'}}>특이사항</span> : 마케팅 경험이 있어, 도달율 광고나 구글 애널리틱스 설치가 가능<br/>(회사에서 약간의온라인 마케팅 업무도 보고 있음) </p>
+                </div>
+            )
+
+          }else if(e.target.value === 'skill'){
+            this.state.terminalInput.push(
+            
+                <div>
+                    <p><span style={{color : 'yellow'}}>자신 있는 기술</span> : Javascript 계열(Node.JS, React.JS, React Native, TypeScript)</p>
+                    <p><span style={{color : 'yellow'}}>다룰 수 있는 기술</span> : ejs, 전자정부 프레임워크(Spring), Android, geth, Solidity, AWS, Ubuntu, python 초큼</p>
                 </div>
             )
 
@@ -148,10 +158,21 @@ class terminalPage extends Component {
                 </div>
              )
            
-         }else if(e.target.value === 'project'){
+         }else if(e.target.value === 'portfolio'){
 
             this.state.terminalInput.push(
                 <div>
+                    <div>이수<br/>
+                        <ul>
+                            <li>삼성 SCSC 15~17 이수</li>
+                            <li>전자정부프레임워크 교육 이수</li>
+                        </ul>
+                    </div>
+                    <div>번역<br/>
+                        <ul>
+                            <li>길벗 출판 : 자바스크립트 리팩토링 번역(ing)</li>
+                        </ul>
+                    </div>
                     <div>Lazard Korea Management Service:<br/>
                         <ul>
                             <li>인바이유: 보험 공동구매 플랫폼,어드민(풀스택)</li>
