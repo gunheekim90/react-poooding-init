@@ -53,7 +53,7 @@ class BigCard extends Component {
                     <p className={cx('codeContainerTag')}>{this.state.tag}</p>
                     <p className={cx('codeContainerDate')}>{this.state.date}</p>
                 </div>
-                <div className={cx('codeContainerTitle')}> {Parser(this.state.content)} </div>
+                <div className={cx('codeContainerTitle')} style={{color : "#000 !important"}}> {Parser(this.state.content)} </div>
             
            
                     

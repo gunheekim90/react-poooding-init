@@ -131,10 +131,11 @@ class MainPage extends Component {
 				  	<div className={cx('col-md-4')}>
 						<ListGroup className={cx('redditListGroup')}>
 						<ListGroupItem style={{color : "#fff", textAlign : 'center', background : 'transparent', fontSize : '120%'}}>Poooding Top 5.</ListGroupItem>
-						{this.state.redditNew.map((item,i)=>{
-							
+						{this.props.data.map((item,i)=>{
+							let url = '/code/'+item.id;
+							if(i > 4) return;
 							return(
-								<ListGroupItem key={i} className={cx('redditListItem')}>{i+1}.  <a href={item.data.url}>{item.data.title}</a></ListGroupItem>
+								<ListGroupItem key={i} className={cx('redditListItem')}>{i+1}.  <a href={url}>{item.title}</a></ListGroupItem>
 							);
 						})}
 						</ListGroup>
@@ -166,7 +167,7 @@ class MainPage extends Component {
 				</div>
 
 			    {isAuthenticated ? Modal : noModal}
-						{Modal}
+						
 				
 				
 			</div>

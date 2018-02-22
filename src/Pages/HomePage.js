@@ -6,6 +6,9 @@ import styles from './pageStyle.scss';
 import classNames from 'classnames/bind';
 import CardComponent from '../Containers/Card/CardComponent'
 import PageHead from '../Components/PageHead'
+import { Modal,ModalManager,Effect} from 'react-dynamic-modal';
+
+
 const cx = classNames.bind(styles);
 const customStyle = {
 	body : {
@@ -37,7 +40,7 @@ class HomePage extends Component {
             snippet : 0,
             movie : 0
 		}
-
+		this.openModal = this.openModal.bind(this);
 	}
     
     async componentWillMount(){
@@ -53,6 +56,22 @@ class HomePage extends Component {
 		})	
 	}
 
+	openModal(e) {
+        e.preventDefault();
+		console.log("asdasdfasd")
+        ModalManager.open(
+        
+            <Modal
+                style={customStyle}
+                effect={Effect.SlideFromRight }>
+                
+				<img src='/homepageStruct.jpg' className={cx('homePageImage')}/>
+            </Modal>
+        
+        
+        
+    	);
+    }
 	render(){
 
         console.log(this.state)
@@ -62,10 +81,14 @@ class HomePage extends Component {
 				<PageHead/><br/><br/><br/><br/><br/><br/>
 				<div className={cx('container')} style={{textAlign : 'center'}}>
                    
-                       <img src='/homepageStruct.jpg' className={cx('homePageImage')}/>
-					   <br/>
+                       {/* <img src='/homepageStruct.jpg' className={cx('homePageImage')}/> */}
+					   <br/><br/><br/><br/>
+					   <div className={cx('container')} style={{textAlign : 'center',color : '#fff',fontSize : "130%"}}>
+						현재 홈페이지에는<br/>	코드post : {this.state.code}개 토막글 : {this.state.snippet}개 영화글 : {this.state.movie}개 <br/> 등록되어 있습니다.
+					   </div>
+					   <br/><br/><br/><br/>
 					   <div style={{color : '#fff',fontSize : '110%', textAlign : 'left'}}>
-					   <span style={{color : "yellow", fontSize : '120%'}}>구조</span> : 아키텍처는 위와 같습니다. 별거 없습니다만, 도메인도 사고 개인 서버도 판 이상 앞으로 지속적으로 블로그 외의 것들을 시도해볼 계획입니다.
+					   <span style={{color : "yellow", fontSize : '120%'}}>구조</span> : 아키텍처는 이렇습니다<button className='btn btn-danger' onClick={this.openModal}>아기텍처보기</button>. <br/>뭐 그렇게 대단하지는 않지만,도메인도 사고 개인 서버도 판 이상 앞으로 지속적으로 블로그 외의 것들을 시도해볼 계획입니다.
 						   <br/> 그래서 약간은 개인 블로그엔 오바스런 구조로 짰습니다.<br/><br/>
 						
 						   <span style={{color : "yellow", fontSize : '120%'}}>제작이유</span> : 서버 다루는게 멋있고 잘은 못하지만 잘 하고 싶어 백엔드만 고집하다가, 프론트를 괄시해선 안되겠다 싶어 리엑트를 시작 했습니다<br/>
