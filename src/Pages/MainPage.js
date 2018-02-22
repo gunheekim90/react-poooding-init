@@ -31,7 +31,7 @@ class MainPage extends Component {
 	}
 
 	async componentWillMount(){
-		console.log("componentWillMount : Data Load...");
+
 		await this.props.getAllData().then((res)=>{
 			// console.log(res);
 		})	

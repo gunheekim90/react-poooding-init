@@ -15,7 +15,7 @@ const initialState = Map({
 export default handleActions({
 	
 	[SET_CURRENT_DATA]:(state, action) =>{
-		console.log("[SET_CURRENT_DATA] in reducer");
+
 		return state.set('data',action.payload);
 		
 	}

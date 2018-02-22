@@ -22,7 +22,7 @@ const initialState = Map({
 export default handleActions({
 	
 	[SET_CURRENT_USER]: (state, action) =>{
-		console.log("[SET_CURRENT_USER] in reducer");
+	
 
 		return state.set('isAuthenticated',!isEmpty(action.payload))
 		  			.set('user',action.payload)
