@@ -109,9 +109,10 @@ class terminalPage extends Component {
             this.state.terminalInput.push(
                <div>
                    <p><span style={{color : 'green'}}>서버</span> : AWS에 EC2에 Ubuntu에 Nginx를 설치 운영</p>
-                   <p><span style={{color : 'green'}}>백엔드</span> : Node JS로 API 서버 운영 하면서 프론트와는 JWT과 함께 주고받고 하고 있음</p>
+                   <p><span style={{color : 'green'}}>백엔드</span> : Node JS로 API 서버 운영 하면서 프론트와는 JWT와 함께 통신중</p>
                    <p><span style={{color : 'green'}}>프론트</span> : 리액트(리덕스,thunk, 리액트 라우터 사용) </p>
                    <p><span style={{color : 'green'}}>디비</span> : Mysql </p>
+                   <p><span style={{color : 'green'}}>스타일</span> : SCSS </p>
                    <p><span style={{color : 'green'}}>또 디비</span> : 혹시 나중에 홈페이지 같이 운영하실분을 위해 Redis 로그인 디비 갖춤</p>
                    <p><span style={{color : 'green'}}>디자인</span> : 창작의 고통을 혼자 겪음</p>
                </div>
