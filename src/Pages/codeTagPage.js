@@ -63,7 +63,7 @@ class codeTagPage extends Component {
                     
 				</div>
                 <div className={cx('codeContainer')}><br/><br/>
-				   <div style={{marginLeft : '100px'}}>
+				   <div style={{marginLeft : '50px'}}>
 				  	 {this.state.data.map((each, i) => {
                         
                         return (<CardComponent key={i} data={each} id={each.id}/>);

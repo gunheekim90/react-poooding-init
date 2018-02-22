@@ -58,7 +58,7 @@ class moviePage extends Component {
 				<NavigationBar/>
 				<PageHead/><br/><br/><br/><br/><br/>
 				<div className={cx('codeContainer')}>
-					   <div style={{padding : '100px',marginLeft : '50px'}}>
+					   <div style={{padding : '100px',marginLeft : '-50px'}}>
 					  	 {this.state.data.map((each, i) => {
 	                        
 	                        return (<CardComponent key={i} data={each} id={each.id}/>);
