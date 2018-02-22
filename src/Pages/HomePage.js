@@ -65,7 +65,7 @@ class HomePage extends Component {
                 style={customStyle}
                 effect={Effect.SlideFromRight }>
                 
-				<img src='/homepageStruct.jpg' className={cx('homePageImage')}/>
+				<img src='http://gunhee90.com:3005/public/homepageStruct.JPG' className={cx('homePageImage')}/>
             </Modal>
 
     	);
