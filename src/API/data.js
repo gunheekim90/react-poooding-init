@@ -69,15 +69,31 @@ export function getThemeEachData(theme){
     }
 }
 
-
+export function getSnippetData(category){
+    return dispatch =>{
+        return axios.post(API_HOST+'/client/getCategoryData',category).then((res)=>{
+            // console.log("getTheme Data");
+            return res.data;
+        })
+    }
+}
 
 export function getTagData(tag){
+    console.log(tag)
     var data = {
         tag : tag
     }
     return dispatch =>{
         return axios.post(API_HOST+'/client/getTagData',data).then((res)=>{
-           
+            return res.data;
+        })
+    }
+}
+
+export function getHomePageData(){
+
+    return dispatch =>{
+        return axios.post(API_HOST+'/client/getHomePageData').then((res)=>{
             return res.data;
         })
     }

@@ -7,6 +7,7 @@ import { test,getAllData,pushData } from '../API/data';
 import { sessionCheck } from '../API/Auth';
 import ModalButton from '../Components/ModalButton'
 import CardComponent from '../Containers/Card/CardComponent'
+import PageHead from '../Components/PageHead'
 import styles from './pageStyle.scss';
 import classNames from 'classnames/bind';
 import ScrollArea from 'react-scrollbar';
@@ -103,20 +104,9 @@ class MainPage extends Component {
 		return (
 			<div>
 				<NavigationBar/>
-				<div className={cx('mainContainerTitle')}>
-					<p> 
-						
-						Poooding Dev  
-					  
-					  <span className={cx("badge", "badge-danger", "aboutHomepageBadge")} style={{textShadow : 'none',padding : '10px'}}>홈페이지 소개</span>
-						<span className={cx("badge", "badge-danger", "aboutMeBadge")} style={{textShadow : 'none',padding : '10px'}}>Poooding 소개</span>
-
-						
-					
-					
-					</p>
-
-				</div><br/><br/><br/><br/>
+				<PageHead/>
+				
+				<br/><br/><br/><br/>
 				<div className={cx('mainContainer')}
 					 onMouseDown={this.mouseDownEvent.bind(this)}
 					 onMouseMove={this.onMouseMoveEvent.bind(this)}

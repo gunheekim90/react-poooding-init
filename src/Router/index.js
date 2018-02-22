@@ -12,6 +12,11 @@ import MoviePage from '../Pages/moviePage';
 import codeTagPage from '../Pages/codeTagPage';
 import codeThemePage from '../Pages/codeThemePage';
 
+import HomePage from '../Pages/HomePage';
+import IntroPage from '../Pages/IntroPage';
+
+import terminalPage from '../Pages/terminalPage';
+
 class RootRoute extends Component {
 	render(){
 		return (
@@ -25,6 +30,9 @@ class RootRoute extends Component {
 				<Route exact path="/code/:id" component={codeEachPage}/>
 				<Route exact path="/code/tag/:id" component={codeTagPage}/>
 				<Route exact path="/code/theme/:id" component={codeThemePage}/>
+				<Route exact path="/homepage" component={HomePage}/>
+				<Route exact path="/intro" component={IntroPage}/>
+				<Route exact path="/terminal" component={terminalPage}/>
 			</div>
 		);
 	}

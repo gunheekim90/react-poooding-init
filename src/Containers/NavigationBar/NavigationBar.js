@@ -77,8 +77,9 @@ class NavigationBar extends React.Component {
               <li><Link to="/code" style={{color : '#fff'}}>코드</Link></li>
               <li><Link to="/snippet" style={{color : '#fff'}}>토막글</Link></li>
               <li><Link to="/movie" style={{color : '#fff'}}>영화</Link></li>
-              <li><Link to="/movie" style={{color : '#fff'}}>홈페이지 소개</Link></li>
-              <li><Link to="/movie" style={{color : '#fff'}}>poooding 소개</Link></li>
+              <li><Link to="/homepage" style={{color : '#fff'}}>홈페이지 소개</Link></li>
+              <li><Link to="/intro" style={{color : '#fff'}}>주인 소개</Link></li>
+              <li><Link to="/terminal" style={{color : '#41FF3A', backgroundColor : '#000'}}>terminal</Link></li>
               
             </ul>
             <form className="navbar-form navbar-left">

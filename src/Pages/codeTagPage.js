@@ -7,6 +7,8 @@ import { getTagData } from '../API/data';
 import { connect } from 'react-redux';
 import CardComponent from '../Containers/Card/CardComponent'
 import { lchmod } from 'fs';
+
+import PageHead from '../Components/PageHead'
 import { Link, NavLink  } from 'react-router-dom';
 import TagButtons from '../Containers/Tag/TagButtons'
 const cx = classNames.bind(styles);
@@ -51,12 +53,7 @@ class codeTagPage extends Component {
 		return (
 			<div>
 				<NavigationBar/>
-				<div className={cx('mainContainerTitle')}>
-				    <p>	Poooding Dev  
-					  <span className={cx("badge", "badge-danger", "aboutHomepageBadge")} style={{textShadow : 'none',padding : '10px'}}>홈페이지 소개</span>
-					  <span className={cx("badge", "badge-danger", "aboutMeBadge")} style={{textShadow : 'none',padding : '10px'}}>Poooding 소개</span>
-					</p>
-				</div>
+				<PageHead/>
 				<div className={cx('codePageTheme')} style={{width : '100%',textAlign : 'center',color : '#fff',position : 'relative',marginTop : '150px'}}>
 					<p>- 태그(Tag) -</p><br/>
 					<div className={cx('container')}>
@@ -66,14 +63,14 @@ class codeTagPage extends Component {
                     
 				</div>
                 <div className={cx('codeContainer')}><br/><br/>
-				   <div style={{marginLeft : '30px'}}>
+				   <div style={{marginLeft : '100px'}}>
 				  	 {this.state.data.map((each, i) => {
                         
                         return (<CardComponent key={i} data={each} id={each.id}/>);
                      })}
 					</div>
 					
-				</div>
+				</div><br/><br/><br/>
 			</div>
 		)
 	}

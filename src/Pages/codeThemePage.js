@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import { lchmod } from 'fs';
 import { Link, NavLink  } from 'react-router-dom';
 import TagButtons from '../Containers/Tag/TagButtons'
+import PageHead from '../Components/PageHead'
 import CardComponent from '../Containers/Card/CardComponent'
 const cx = classNames.bind(styles);
 
@@ -53,12 +54,7 @@ class codeThemePage extends Component {
 		return (
 			<div>
 				<NavigationBar/>
-				<div className={cx('mainContainerTitle')}>
-				    <p>	Poooding Dev  
-					  <span className={cx("badge", "badge-danger", "aboutHomepageBadge")} style={{textShadow : 'none',padding : '10px'}}>홈페이지 소개</span>
-					  <span className={cx("badge", "badge-danger", "aboutMeBadge")} style={{textShadow : 'none',padding : '10px'}}>Poooding 소개</span>
-					</p>
-				</div>
+				<PageHead/>
 				<div className={cx('codePageTheme')} style={{width : '100%',textAlign : 'center',color : '#fff',position : 'relative',marginTop : '150px'}}>
 				
 					<p>- 태그(Tag) -</p><br/>
@@ -116,7 +112,7 @@ class codeThemePage extends Component {
 	                     })}
 						</div>
 						
-				</div>
+				</div><br/><br/><br/>
 
 					
 				

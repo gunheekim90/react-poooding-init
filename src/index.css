@@ -1,4 +1,5 @@
-
+@import url(http://api.mobilis.co.kr/webfonts/css/?fontface=NanumGothicWeb); 
+* { font-family: 'NanumGothic', '나눔고딕','NanumGothicWeb', '맑은 고딕', 'Malgun Gothic', Dotum; }
 html{
   position: relative;
   height: 100%;
@@ -15,3 +16,4 @@ body {
 #root{
   min-height: 100%;
 }
+

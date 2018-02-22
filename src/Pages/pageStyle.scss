@@ -35,7 +35,7 @@
        height: 100%;
        display : inline-block;
        cursor : pointer;
-       margin-left: 120px;
+      
 
    }
    @media screen and (max-width: 767px) {
@@ -333,6 +333,65 @@
   color : blue;
 }
 
+.homePageImage{
+  @media screen and (min-width: 768px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.terminalBody{
+  @media screen and (min-width: 768px) {
+      position: absolute;
+      font-family: Courier new;
+      color : #CCCCCC;
+      background: #000000;
+      border: 3px double #CCCCCC;
+      padding: 10px;
+      min-height : 100%;
+      width : 100%;
+  }
+  @media screen and (max-width: 767px) {
+    position: absolute;
+      font-family: Courier new;
+      color : #CCCCCC;
+      background: #000000;
+      border: 3px double #CCCCCC;
+      padding: 10px;
+      min-height : 100%;
+      width : 100%;
+  }
+}
+
+.terminalInputReady {
+  @media screen and (min-width: 768px) {
+   width: 50%;
+   border: none;
+   background-color: transparent;
+   outline: none;
+  }
+  @media screen and (max-width: 767px) {
+    width: 25%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+  }
+}
+
+.terminalInputDone {
+  @media screen and (min-width: 768px) {
+   width: 50%;
+   border: none;
+   background-color: transparent;
+   outline: none;
+   cursor : none;
+  }
+  @media screen and (max-width: 767px) {
+  
+  }
+}
 
 
 
