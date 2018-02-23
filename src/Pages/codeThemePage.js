@@ -6,6 +6,7 @@ import BigCard from '../Containers/BigCard/BigCard';
 import { getThemeDataSpecific, getThemeEachData } from '../API/data';
 import { connect } from 'react-redux';
 import { lchmod } from 'fs';
+import ReactDOM from 'react-dom';
 import { Link, NavLink  } from 'react-router-dom';
 import TagButtons from '../Containers/Tag/TagButtons'
 import PageHead from '../Components/PageHead'
@@ -41,10 +42,35 @@ class codeThemePage extends Component {
 			})
 		})
 
-
-		
 	}
 	
+	mouseDownEvent(evt){
+		// console.log(evt.clientX);
+		// console.log(ReactDOM.findDOMNode(this.mainContainer).scrollLeft)
+		this.setState({
+			enableScroll : true,
+			scrollLeft : ReactDOM.findDOMNode(this.mainContainer).scrollLeft,
+			clientX : evt.clientX
+		})
+	}
+
+	mouseUpEvent(evt){
+		this.setState({
+			enableScroll : false,
+			scrollLeft: 0
+		})
+	}
+
+	onMouseMoveEvent(evt){
+		if(this.state.enableScroll){
+			// console.log(ReactDOM.findDOMNode(this.mainContainer).scrollLeft)
+			// scrollLeft - clientX + event.clientX;
+			
+			ReactDOM.findDOMNode(this.mainContainer).scrollLeft = this.state.scrollLeft + this.state.clientX - evt.clientX;	
+			
+		}
+		
+	}
 
 	render(){
 
@@ -101,7 +127,11 @@ class codeThemePage extends Component {
 
 
 				</div>
-				<div className={cx('mainContainer')}>
+				<div className={cx('mainContainer')}
+					onMouseDown={this.mouseDownEvent.bind(this)}
+					onMouseMove={this.onMouseMoveEvent.bind(this)}
+					onMouseUp={this.mouseUpEvent.bind(this)}
+					ref={div => this.mainContainer = div}>
 					   <div>
 					  	 {this.state.data.map((each, i) => {
 	                        
