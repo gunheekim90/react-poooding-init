@@ -13,7 +13,7 @@ class PageHead extends Component {
 					<p> 
 						Poooding Dev  
 					  <span className={cx("badge", "badge-danger", "aboutHomepageBadge")} style={{textShadow : 'none',padding : '10px'}}><Link to='/homepage' style={{color : '#fff'}}>홈페이지 소개</Link></span>
-						<span className={cx("badge", "badge-danger", "aboutMeBadge")} style={{textShadow : 'none',padding : '10px'}}><Link to='/intro' style={{color : '#fff'}}>Poooding 소개</Link></span>
+						<span className={cx("badge", "badge-danger", "aboutMeBadge")} style={{textShadow : 'none',padding : '10px'}}><Link to='/intro' style={{color : '#fff'}}>소개</Link></span>
 
 					</p>
 				</div>
